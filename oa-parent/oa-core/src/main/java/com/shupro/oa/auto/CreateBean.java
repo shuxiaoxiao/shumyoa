@@ -214,10 +214,12 @@ public class CreateBean {
 //		typeMap.put("varchar", "String");
 //		typeMap.put("nvarchar", "String");
 		typeMap.put("int", "Integer");
+		typeMap.put("bigint", "Integer");
 		typeMap.put("float", "Float");
 		typeMap.put("double", "Double");
 		typeMap.put("decimal", "java.math.BigDecimal");
 		typeMap.put("date", "java.util.Date");
+		typeMap.put("datetime", "java.util.Date");
 		typeMap.put("time", "java.sql.Timestamp");
 		typeMap.put("clob", "java.sql.Clob");
 		

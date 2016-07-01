@@ -11,7 +11,7 @@ public class AutoCode2JarUtil {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/myoa?useUnicode=true&characterEncoding=UTF-8"; 
 		String username = "root"; 
 		String password = "root"; 
-		String tableName = "sys_role"; 
+		String tableName = "sys_log"; 
 		String appPackagePrefix = "com.shupro.oa"; 
 		String appName = "admin"; 
 		String sourceRoot = "src/main/java";

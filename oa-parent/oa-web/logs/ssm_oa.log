@@ -83,3 +83,870 @@
 [ssm_oa][INFO] [2016-07-01 11:37:40] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 11:37:39 CST 2016]; parent: Root WebApplicationContext
 [ssm_oa][INFO] [2016-07-01 11:37:40] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 11:37:39 CST 2016]; parent: Root WebApplicationContext
 [ssm_oa][INFO] [2016-07-01 11:37:41] org.springframework.web.servlet.FrameworkServlet.initServletBean(504) | FrameworkServlet 'spring': initialization completed in 1951 ms
+[ssm_oa][INFO] [2016-07-01 14:29:33] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:29:33] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:29:33 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:29:33] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:29:34] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:29:34] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:29:34] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:29:34] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:29:35] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 2132 ms
+[ssm_oa][INFO] [2016-07-01 14:29:49] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:29:49] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:29:49 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:29:49] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:29:49] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 12 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 12; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 12; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:31:08] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:31:08] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:31:08 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:31:09] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:31:09] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:31:09] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:31:09] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:31:09] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:31:10] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1615 ms
+[ssm_oa][INFO] [2016-07-01 14:31:21] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:31:21] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:31:21 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:31:21] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:31:21] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:33:59 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:33:59] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:34:00] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1559 ms
+[ssm_oa][INFO] [2016-07-01 14:34:22] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:34:22] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:34:22 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:34:22] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:34:22] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:36:10] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:36:10] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:36:10 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:36:10] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:36:10] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:36:11] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:36:11] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:36:11] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:36:12] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1741 ms
+[ssm_oa][INFO] [2016-07-01 14:36:24] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:36:24] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:36:24 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:36:24] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:36:24] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:41:26] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:41:26] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:41:26 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:41:26] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:41:26] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:41:27] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:41:27] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:41:27] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:41:28] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1740 ms
+[ssm_oa][INFO] [2016-07-01 14:42:08] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:42:08] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:42:08 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:42:08] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:42:08] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:45:29] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:45:29] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:45:29 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:45:29] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:45:29] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:45:30] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:45:30] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:45:30] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:45:31] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1622 ms
+[ssm_oa][INFO] [2016-07-01 14:45:42] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:45:42] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:45:42 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:45:42] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:45:42] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:615)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:706)
+	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:677)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:377)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 48 more
+[ssm_oa][INFO] [2016-07-01 14:46:25] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:46:25] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:46:25 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:46:25] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:46:25] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 14 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 14; columnNumber: 52; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 29 more
+[ssm_oa][INFO] [2016-07-01 14:48:05] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:48:05] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:48:05 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:48:05] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:48:05] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:48:06] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:48:06] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:48:06] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:48:07] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1611 ms
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:48:26 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:48:26] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:48:27] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1672 ms
+[ssm_oa][INFO] [2016-07-01 14:48:36] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:48:36] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:48:36 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:48:36] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][ERROR] [2016-07-01 14:48:36] org.springframework.web.servlet.FrameworkServlet.initServletBean(498) | Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 15 in XML document from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 15; columnNumber: 27; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:857)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 15; columnNumber: 27; 元素 "aop:aspectj-autoproxy" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:286)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2717)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:607)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:489)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:835)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:764)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:237)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 29 more
+[ssm_oa][INFO] [2016-07-01 14:52:15] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:52:15] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:52:15 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:52:15] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:52:15] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:52:16] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:52:16] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:52:16] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:52:17] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1598 ms
+[ssm_oa][INFO] [2016-07-01 14:52:26] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:52:26] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:52:26 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:52:26] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][INFO] [2016-07-01 14:52:26] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(314) | Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/welcome]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.welcome(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/home]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.home(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.save(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.update(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/treeGrid]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.treeGrid(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/tree]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.tree(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.save(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.update(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.save(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.update(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.save(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.update(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.save(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.update(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.init()
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.save(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:52:27] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.update(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 14:52:28] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:52:26 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:52:28] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:52:26 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:52:28] org.springframework.web.servlet.FrameworkServlet.initServletBean(504) | FrameworkServlet 'spring': initialization completed in 2510 ms
+[ssm_oa][INFO] [2016-07-01 14:53:26] com.shupro.oa.aop.SysLogAop.recordSysLog(64) | [类名]:com.shupro.oa.admin.controller.SysDeptController,[方法]:init,[参数]:
+[ssm_oa][INFO] [2016-07-01 14:53:26] com.shupro.oa.aop.SysLogAop.recordSysLog(79) | com.shupro.oa.admin.model.SysLog@66e56bd0
+[ssm_oa][INFO] [2016-07-01 14:55:03] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 14:55:03] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 14:55:03 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 14:55:03] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:55:04] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 14:55:04] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:55:04] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 14:55:04] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:55:05] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1630 ms
+[ssm_oa][INFO] [2016-07-01 14:56:40] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 14:56:40] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:56:40 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:56:40] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][INFO] [2016-07-01 14:56:40] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(314) | Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/welcome]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.welcome(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/home]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.home(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.save(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.update(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/tree]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.tree(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/treeGrid]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.treeGrid(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.save(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.update(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.save(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.update(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.save(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.update(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.save(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.update(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.init()
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.save(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.update(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 14:56:41] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:56:40 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:56:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 14:56:40 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 14:56:42] org.springframework.web.servlet.FrameworkServlet.initServletBean(504) | FrameworkServlet 'spring': initialization completed in 2338 ms
+[ssm_oa][INFO] [2016-07-01 14:57:39] com.shupro.oa.aop.SysLogAop.recordSysLog(65) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:null
+[ssm_oa][INFO] [2016-07-01 14:58:01] com.shupro.oa.aop.SysLogAop.recordSysLog(65) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:null
+[ssm_oa][INFO] [2016-07-01 14:58:08] com.shupro.oa.aop.SysLogAop.recordSysLog(65) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:null
+[ssm_oa][INFO] [2016-07-01 14:58:50] com.shupro.oa.aop.SysLogAop.recordSysLog(65) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:init,[参数]:
+[ssm_oa][INFO] [2016-07-01 14:58:50] com.shupro.oa.aop.SysLogAop.recordSysLog(81) | com.shupro.oa.admin.model.SysLog@1c34408e
+[ssm_oa][INFO] [2016-07-01 14:58:59] com.shupro.oa.aop.SysLogAop.recordSysLog(65) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[参数]:rows=10&page=1&
+[ssm_oa][INFO] [2016-07-01 15:07:29] com.shupro.oa.aop.SysLogAop.recordSysLog(68) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:init,[参数]:
+[ssm_oa][INFO] [2016-07-01 15:07:45] com.shupro.oa.aop.SysLogAop.recordSysLog(84) | com.shupro.oa.admin.model.SysLog@24429290
+[ssm_oa][INFO] [2016-07-01 15:08:40] com.shupro.oa.aop.SysLogAop.recordSysLog(68) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[参数]:rows=10&page=1&
+[ssm_oa][INFO] [2016-07-01 15:12:41] com.shupro.oa.aop.SysLogAop.recordSysLog(68) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:save,[参数]:usertype=&deptid=&name=试试&id=&sotid=&loginname=&createtime=&phonenum2=&pwd=&sex=&icon=&leavetime=&address=&states=&phonenum=&
+[ssm_oa][INFO] [2016-07-01 15:12:50] com.shupro.oa.aop.SysLogAop.recordSysLog(84) | com.shupro.oa.admin.model.SysLog@5e31edb1
+[ssm_oa][INFO] [2016-07-01 15:13:07] com.shupro.oa.aop.SysLogAop.recordSysLog(68) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[参数]:page=1&rows=10&
+[ssm_oa][INFO] [2016-07-01 15:22:03] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:22:04] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:22:14] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:23:20] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 15:23:20] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 15:23:20 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 15:23:20] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 15:23:20] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 15:23:21] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 15:23:21] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 15:23:21] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 15:23:22] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1623 ms
+[ssm_oa][INFO] [2016-07-01 15:23:28] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 15:23:28] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:23:28 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:23:28] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][INFO] [2016-07-01 15:23:28] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(314) | Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/home]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.home(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/welcome]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.welcome(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.save(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.update(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/tree]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.tree(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/treeGrid]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.treeGrid(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.save(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.update(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.save(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.update(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.save(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.update(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.save(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.update(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.init()
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.save(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:23:29] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.update(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 15:23:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:23:28 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:23:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:23:28 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:23:30] org.springframework.web.servlet.FrameworkServlet.initServletBean(504) | FrameworkServlet 'spring': initialization completed in 2363 ms
+[ssm_oa][INFO] [2016-07-01 15:23:30] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:23:46] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:08] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:23] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:25] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:25] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:home,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:25] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:25] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:41] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:24:42] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.LoginController,[方法]:welcome,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:25:30] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:init,[参数]:null
+[ssm_oa][INFO] [2016-07-01 15:25:30] com.shupro.oa.aop.SysLogAop.recordSysLog(88) | com.shupro.oa.admin.model.SysLog@7e12b7be
+[ssm_oa][INFO] [2016-07-01 15:25:34] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysDeptController,[方法]:init,[参数]:null
+[ssm_oa][INFO] [2016-07-01 15:25:34] com.shupro.oa.aop.SysLogAop.recordSysLog(88) | com.shupro.oa.admin.model.SysLog@54c6a83d
+[ssm_oa][INFO] [2016-07-01 15:25:37] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[参数]:{page=[Ljava.lang.String;@9a1092a, rows=[Ljava.lang.String;@2b60a956}
+[ssm_oa][INFO] [2016-07-01 15:25:41] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysDeptController,[方法]:treeGrid,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:25:41] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysDeptController,[方法]:tree,[参数]:{}
+[ssm_oa][INFO] [2016-07-01 15:25:42] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysDeptController,[方法]:tree,[参数]:{id=[Ljava.lang.String;@73ab16eb}
+[ssm_oa][INFO] [2016-07-01 15:25:57] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:save,[参数]:{createtime=[Ljava.lang.String;@47f945fe, id=[Ljava.lang.String;@3e624b9c, leavetime=[Ljava.lang.String;@27520ec3, icon=[Ljava.lang.String;@7c47385f, loginname=[Ljava.lang.String;@27c624b7, sex=[Ljava.lang.String;@41947ec7, pwd=[Ljava.lang.String;@7c0f5c73, deptid=[Ljava.lang.String;@547ec1a6, address=[Ljava.lang.String;@4ddba4a0, name=[Ljava.lang.String;@f152c4f, phonenum2=[Ljava.lang.String;@370ffe45, states=[Ljava.lang.String;@7afe8040, sotid=[Ljava.lang.String;@5a9628d5, usertype=[Ljava.lang.String;@3852e669, phonenum=[Ljava.lang.String;@4a951462}
+[ssm_oa][INFO] [2016-07-01 15:25:57] com.shupro.oa.aop.SysLogAop.recordSysLog(88) | com.shupro.oa.admin.model.SysLog@16d542f
+[ssm_oa][INFO] [2016-07-01 15:25:57] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[参数]:{page=[Ljava.lang.String;@39f961fa, rows=[Ljava.lang.String;@238f81d2}
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Jul 01 15:30:34 CST 2016]; root of context hierarchy
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/spring/spring.xml]
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/config.properties]
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from URL [jar:file:/E:/mavenrepo/com/shupro/test/oa-admin/0.0.1-SNAPSHOT/oa-admin-0.0.1-SNAPSHOT.jar!/config.properties]
+[ssm_oa][INFO] [2016-07-01 15:30:34] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 15:30:35] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 1661 ms
+[ssm_oa][INFO] [2016-07-01 15:31:27] org.springframework.web.servlet.FrameworkServlet.initServletBean(485) | FrameworkServlet 'spring': initialization started
+[ssm_oa][INFO] [2016-07-01 15:31:27] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:31:27 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:31:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from URL [file:/G:/myoaRepo/oa-parent/oa-web/target/classes/spring/spring-mvc.xml]
+[ssm_oa][INFO] [2016-07-01 15:31:27] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(314) | Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/home]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.home(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/login/welcome]}" onto public java.lang.String com.shupro.oa.admin.controller.LoginController.welcome(org.springframework.ui.Model)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.save(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.update(com.shupro.oa.admin.model.SysDept)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/tree]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.tree(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDept/treeGrid]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDeptController.treeGrid(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.save(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysDictionary/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysDictionaryController.update(com.shupro.oa.admin.model.SysDictionary)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.save(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysLog/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysLogController.update(com.shupro.oa.admin.model.SysLog)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.save(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysMenu/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysMenuController.update(com.shupro.oa.admin.model.SysMenu)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.save(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysRole/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysRoleController.update(com.shupro.oa.admin.model.SysRole)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/init]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.init()
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/list]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.list(javax.servlet.http.HttpServletRequest)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/save],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.save(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/delete/{ids}],methods=[GET]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.delete(java.lang.String)
+[ssm_oa][INFO] [2016-07-01 15:31:28] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(217) | Mapped "{[/sysUser/update],methods=[POST]}" onto public java.lang.String com.shupro.oa.admin.controller.SysUserController.update(com.shupro.oa.admin.model.SysUser)
+[ssm_oa][INFO] [2016-07-01 15:31:29] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:31:27 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:31:29] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(517) | Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 01 15:31:27 CST 2016]; parent: Root WebApplicationContext
+[ssm_oa][INFO] [2016-07-01 15:31:29] org.springframework.web.servlet.FrameworkServlet.initServletBean(504) | FrameworkServlet 'spring': initialization completed in 2297 ms
+[ssm_oa][INFO] [2016-07-01 15:31:29] com.shupro.oa.aop.SysLogAop.recordSysLog(90) | com.shupro.oa.admin.model.SysLog@941b926
+[ssm_oa][INFO] [2016-07-01 15:31:32] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[请求路径]:/oa/sysUser/list,[参数]:{page=[Ljava.lang.String;@440c9a45, rows=[Ljava.lang.String;@17644aea}
+[ssm_oa][INFO] [2016-07-01 15:31:48] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:save,[请求路径]:/oa/sysUser/save,[参数]:{createtime=[Ljava.lang.String;@7f52011, id=[Ljava.lang.String;@6e0c402b, leavetime=[Ljava.lang.String;@6648ff7e, icon=[Ljava.lang.String;@427ddda8, loginname=[Ljava.lang.String;@556362b2, sex=[Ljava.lang.String;@6fe4bfe9, pwd=[Ljava.lang.String;@12f39363, deptid=[Ljava.lang.String;@3551524d, address=[Ljava.lang.String;@6df25893, name=[Ljava.lang.String;@41955349, phonenum2=[Ljava.lang.String;@328eff42, states=[Ljava.lang.String;@4a185ffc, sotid=[Ljava.lang.String;@645bf65, usertype=[Ljava.lang.String;@4d18831a, phonenum=[Ljava.lang.String;@4474781}
+[ssm_oa][INFO] [2016-07-01 15:31:48] com.shupro.oa.aop.SysLogAop.recordSysLog(90) | com.shupro.oa.admin.model.SysLog@63a76858
+[ssm_oa][INFO] [2016-07-01 15:31:48] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[请求路径]:/oa/sysUser/list,[参数]:{page=[Ljava.lang.String;@17289234, rows=[Ljava.lang.String;@68969fcc}
+[ssm_oa][INFO] [2016-07-01 15:35:04] com.shupro.oa.aop.SysLogAop.recordSysLog(72) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:save,[请求路径]:/oa/sysUser/save,[参数]:{createtime=[Ljava.lang.String;@3c33204, id=[Ljava.lang.String;@408a68a, leavetime=[Ljava.lang.String;@53edb017, icon=[Ljava.lang.String;@19c3e10d, loginname=[Ljava.lang.String;@aec29b2, sex=[Ljava.lang.String;@16a56ab8, pwd=[Ljava.lang.String;@460161a5, deptid=[Ljava.lang.String;@4b1bb8b, address=[Ljava.lang.String;@308fa515, name=[Ljava.lang.String;@269f1e9b, phonenum2=[Ljava.lang.String;@189265ec, states=[Ljava.lang.String;@3361758e, sotid=[Ljava.lang.String;@436cd7fc, usertype=[Ljava.lang.String;@1ed803f9, phonenum=[Ljava.lang.String;@77ece040}
+[ssm_oa][INFO] [2016-07-01 15:35:04] com.shupro.oa.aop.SysLogAop.recordSysLog(90) | com.shupro.oa.admin.model.SysLog@6076c742
+[ssm_oa][INFO] [2016-07-01 15:35:07] com.shupro.oa.aop.SysLogAop.recordSysLog(74) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[请求路径]:/oa/sysUser/list,[参数]:{"page":["1"],"rows":["10"]}
+[ssm_oa][INFO] [2016-07-01 15:35:44] com.shupro.oa.aop.SysLogAop.recordSysLog(74) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:save,[请求路径]:/oa/sysUser/save,[参数]:{"createtime":[""],"id":[""],"leavetime":[""],"icon":[""],"loginname":["aa"],"sex":[""],"pwd":["aaa"],"deptid":[""],"address":[""],"name":["aa"],"phonenum2":[""],"states":[""],"sotid":[""],"usertype":[""],"phonenum":[""]}
+[ssm_oa][INFO] [2016-07-01 15:36:05] com.shupro.oa.aop.SysLogAop.recordSysLog(92) | com.shupro.oa.admin.model.SysLog@2663829e
+[ssm_oa][INFO] [2016-07-01 15:36:11] com.shupro.oa.aop.SysLogAop.recordSysLog(74) | [类名]:com.shupro.oa.admin.controller.SysUserController,[方法]:list,[请求路径]:/oa/sysUser/list,[参数]:{"page":["1"],"rows":["10"]}
