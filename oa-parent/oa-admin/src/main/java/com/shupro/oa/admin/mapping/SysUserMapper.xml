@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shupro.oa.admin.dao.SysUserMapper" >
+  	<resultMap id="BaseResultMap" type="com.shupro.oa.admin.model.SysUser" >
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="loginname" property="loginname"/>
+		<result column="pwd" property="pwd"/>
+		<result column="sex" property="sex"/>
+		<result column="icon" property="icon"/>
+		<result column="phonenum" property="phonenum"/>
+		<result column="phonenum2" property="phonenum2"/>
+		<result column="address" property="address"/>
+		<result column="states" property="states"/>
+		<result column="deptid" property="deptid"/>
+		<result column="createtime" property="createtime"/>
+		<result column="leavetime" property="leavetime"/>
+		<result column="usertype" property="usertype"/>
+		<result column="sotid" property="sotid"/>
+	</resultMap>
+       
+	<sql id="Base_Column_List" >
+		 id,name,loginname,pwd,sex,icon,phonenum,phonenum2,address,states,deptid,createtime,leavetime,usertype,sotid
+	</sql>
+   
+	<!-- 动态查询条件 -->
+	<sql id="Example_Where_Clause">
+	where 1=1
+	<trim suffixOverrides="," >
+		<if test="id != null and id != '' ">
+		    and id = #{id}
+		</if>
+		<if test="name != null and name != '' ">
+		    and name = #{name}
+		</if>
+		<if test="loginname != null and loginname != '' ">
+		    and loginname = #{loginname}
+		</if>
+		<if test="pwd != null and pwd != '' ">
+		    and pwd = #{pwd}
+		</if>
+		<if test="sex != null and sex != '' ">
+		    and sex = #{sex}
+		</if>
+		<if test="icon != null and icon != '' ">
+		    and icon = #{icon}
+		</if>
+		<if test="phonenum != null and phonenum != '' ">
+		    and phonenum = #{phonenum}
+		</if>
+		<if test="phonenum2 != null and phonenum2 != '' ">
+		    and phonenum2 = #{phonenum2}
+		</if>
+		<if test="address != null and address != '' ">
+		    and address = #{address}
+		</if>
+		<if test="states != null and states != '' ">
+		    and states = #{states}
+		</if>
+		<if test="deptid != null and deptid != '' ">
+		    and deptid = #{deptid}
+		</if>
+		<if test="createtime != null and createtime != '' ">
+		    and createtime = #{createtime}
+		</if>
+		<if test="leavetime != null and leavetime != '' ">
+		    and leavetime = #{leavetime}
+		</if>
+		<if test="usertype != null and usertype != '' ">
+		    and usertype = #{usertype}
+		</if>
+		<if test="sotid != null and sotid != '' ">
+		    and sotid = #{sotid}
+		</if>
+	
+	</trim>
+	</sql>
+ 
+	<!-- 根据id查询  -->
+	<select id="selectById"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select <include refid="Base_Column_List" /> 
+	 from sys_user where id = #{id}
+	</select>
+
+	<!-- 条件查询所有(分页拦截的也是这个语句) -->
+	<select id="selectAll4Page" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from sys_user
+		<include refid="Example_Where_Clause"/>
+	</select>
+   
+	<!-- 插入记录 -->
+	<insert id="insert" parameterType="com.shupro.oa.admin.model.SysUser" >
+	  insert into sys_user(id,name,loginname,pwd,sex,icon,phonenum,phonenum2,address,states,deptid,createtime,leavetime,usertype,sotid)
+ values(#{id},#{name},#{loginname},#{pwd},#{sex},#{icon},#{phonenum},#{phonenum2},#{address},#{states},#{deptid},#{createtime},#{leavetime},#{usertype},#{sotid})
+	</insert>
+
+	<!-- 根据id，修改记录-->  
+	 <update id="update" parameterType="com.shupro.oa.admin.model.SysUser" >
+	  update sys_user 
+	  set name=#{name},loginname=#{loginname},pwd=#{pwd},sex=#{sex},icon=#{icon},phonenum=#{phonenum},phonenum2=#{phonenum2},address=#{address},states=#{states},deptid=#{deptid},leavetime=#{leavetime},usertype=#{usertype},sotid=#{sotid} where id=#{id}
+	 </update>
+ 
+	 <!-- 动态修改记录，只修改只不为空的字段 -->
+	<update id="updateSelective" parameterType="com.shupro.oa.admin.model.SysUser" >
+		update sys_user set 
+	<trim  suffixOverrides="," >
+	<if test="name != null  and name != '' ">
+		name=#{name},
+	</if>
+	<if test="loginname != null  and loginname != '' ">
+		loginname=#{loginname},
+	</if>
+	<if test="pwd != null  and pwd != '' ">
+		pwd=#{pwd},
+	</if>
+	<if test="sex != null  and sex != '' ">
+		sex=#{sex},
+	</if>
+	<if test="icon != null  and icon != '' ">
+		icon=#{icon},
+	</if>
+	<if test="phonenum != null  and phonenum != '' ">
+		phonenum=#{phonenum},
+	</if>
+	<if test="phonenum2 != null  and phonenum2 != '' ">
+		phonenum2=#{phonenum2},
+	</if>
+	<if test="address != null  and address != '' ">
+		address=#{address},
+	</if>
+	<if test="states != null  and states != '' ">
+		states=#{states},
+	</if>
+	<if test="deptid != null  and deptid != '' ">
+		deptid=#{deptid},
+	</if>
+	<if test="createtime != null  ">
+		createtime=#{createtime},
+	</if>
+	<if test="leavetime != null  ">
+		leavetime=#{leavetime},
+	</if>
+	<if test="usertype != null  and usertype != '' ">
+		usertype=#{usertype},
+	</if>
+	<if test="sotid != null  ">
+		sotid=#{sotid},
+	</if>
+	</trim> where id=#{id}
+	</update>
+
+	<!-- 删除记录 -->
+	<delete id="deleteById" parameterType="com.shupro.oa.admin.model.SysUser" >
+		delete 	 from sys_user where id = #{id}
+	</delete>
+  	
+</mapper>
