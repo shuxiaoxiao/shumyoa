@@ -58,7 +58,7 @@
 		<div id="centerPanel" data-options="region:'center',title:'title' ">
 			<div id="mainTab" style="width:500px;height:250px;">
 	    		<div title="欢迎页面" style="padding:20px;">
-	    			<iframe frameborder=0 style=width:100%;height:100% src='${path }/login/welcome' ></iframe>
+	    			<iframe frameborder=0 style=width:100%;height:100% src='${path }/welcome' ></iframe>
 	    		</div>
 	    	</div> 
 		</div>

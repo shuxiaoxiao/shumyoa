@@ -10,6 +10,6 @@
   </head>
   
   <body>
-    <jsp:forward page="/login/home"></jsp:forward>
+    <jsp:forward page="/tologin"></jsp:forward>
   </body>
 </html>

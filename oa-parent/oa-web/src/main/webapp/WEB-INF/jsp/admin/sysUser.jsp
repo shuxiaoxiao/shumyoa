@@ -40,7 +40,7 @@
 		    		</tr>
 		    		<tr>
 		    			<td class="form-td-left"> 密码:</td>
-		    			<td><input class="easyui-textbox form-input" name="pwd" 
+		    			<td><input class="easyui-textbox form-input" name="pwd" type="password" 
 		    				data-options="" maxlength="50" missingMessage="请填写密码" />
 		    			</td>
 		    		</tr>
@@ -228,8 +228,8 @@
 	            return isValid;
 	        },
 	        success: function(result){
-	        	var data = JSON.parse(result);//Json对象
-	        	//var data = $.parseJSON(result);//jq对象
+	        	//var data = JSON.parse(result);//Json对象
+	        	var data = $.parseJSON(result);//jq对象
 	       	 	$.messager.progress('close');
 	            if (data=='success'){
 		        	$('#dlg').dialog('close');

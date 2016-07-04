@@ -89,7 +89,17 @@
 		from sys_user
 		<include refid="Example_Where_Clause"/>
 	</select>
-   
+	
+	<!-- 登录  -->
+	<select id="login"  resultMap="BaseResultMap" >
+		select <include refid="Base_Column_List" /> 
+	 from sys_user where loginname = #{0} and pwd = #{1}
+	</select>
+<!-- 	<select id="login"  resultMap="BaseResultMap" >
+		select <include refid="Base_Column_List" /> 
+	 from sys_user where loginname = #{loginname} and pwd = #{password}
+	</select> -->
+	   
 	<!-- 插入记录 -->
 	<insert id="insert" parameterType="com.shupro.oa.admin.model.SysUser" >
 	  insert into sys_user(id,name,loginname,pwd,sex,icon,phonenum,phonenum2,address,states,deptid,createtime,leavetime,usertype,sotid)

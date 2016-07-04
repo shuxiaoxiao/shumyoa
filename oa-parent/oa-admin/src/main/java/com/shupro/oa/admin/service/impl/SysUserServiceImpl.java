@@ -51,4 +51,9 @@ public class SysUserServiceImpl extends AbstractService<SysUser, Integer> implem
 			return 0;
 		}
 	}
+
+	@Override
+	public SysUser login(String username, String password) {
+		return sysUserMapper.login(username, password);
+	}
 }

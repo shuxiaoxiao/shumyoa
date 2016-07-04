@@ -1,12 +1,10 @@
 package com.shupro.oa.aop;
 
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -19,7 +17,9 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.shupro.oa.admin.model.SysLog;
+import com.shupro.oa.admin.model.SysUser;
 import com.shupro.oa.admin.service.SysLogService;
+import com.shupro.oa.utils.MyBeanUtil;
 import com.shupro.oa.utils.json.JsonUtil;
 
 /**
@@ -45,30 +45,19 @@ public class SysLogAop {
         String strMethodName = point.getSignature().getName();
         String strClassName = point.getTarget().getClass().getName();
         Object[] params = point.getArgs();
-//        Enumeration<String> paraNames = null;
-//        Map<String, String[]> inputParamMap = null;
         String strMessage = "";
+        String clientip = "";
         HttpServletRequest request = null;
         if (params != null && params.length > 0) {
             request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            // 获取请求ip
+            clientip = request.getRemoteAddr();
             // 获取请求地址  
             String requestPath = request.getRequestURI();
             // 获取输入参数
-            Map<String, String[]> inputParamMap = request.getParameterMap(); 
-            // 获取输入参数(方式二)
-//            Enumeration<String> paraNames = request.getParameterNames();
-//            StringBuffer bfParams = new StringBuffer();
-//            String key;
-//            String value;
-//            while (paraNames.hasMoreElements()) {
-//                key = paraNames.nextElement();
-//                value = request.getParameter(key);
-//                bfParams.append(key).append("=").append(value).append("&");
-//            }
-//            if (StringUtils.isBlank(bfParams)) {
-//                bfParams.append(request.getQueryString());
-//            }
-//          strMessage = String.format("[类名]:%s,[方法]:%s,[参数]:%s", strClassName, strMethodName, bfParams.toString());
+            Map<String, String> inputParamMap = MyBeanUtil.getParameterMap(request); 
+//            //获取输入参数(方式二)
+//            Map<String, String[]> inputParamMap = request.getParameterMap(); 
             strMessage = String.format("[类名]:%s,[方法]:%s,[请求路径]:%s,[参数]:%s", 
             		strClassName, strMethodName,requestPath, JsonUtil.obj2JsonStr(inputParamMap));
             LOGGER.info(strMessage);
@@ -76,22 +65,23 @@ public class SysLogAop {
 
         if (isWriteLog(strMethodName)) {
             try {
+            	SysUser userInfo = (SysUser) request.getSession().getAttribute("userInfo");
 //                Subject currentUser = SecurityUtils.getSubject();
 //                PrincipalCollection collection = currentUser.getPrincipals();
 //                if (null != collection) {
 //                    String loginName = collection.getPrimaryPrincipal().toString();
-            	 	String loginName = "admin";
-                    SysLog sysLog = new SysLog();
-                    sysLog.setLoginname(loginName);
-                    sysLog.setRolename("admin");
-                    sysLog.setContent(strMessage);
-                    sysLog.setCreatetime(new Date());
-                    if (request != null) {
-                        sysLog.setClientip(request.getRemoteAddr());
-                    }
-                    LOGGER.info(sysLog.toString());
-                    sysLogService.insert(sysLog);
-//                }
+            	if(null != userInfo) {
+            		SysLog sysLog = new SysLog();
+            		sysLog.setLoginname(userInfo.getLoginname());
+            		sysLog.setRolename("admin");
+            		sysLog.setContent(strMessage);
+            		sysLog.setCreatetime(new Date());
+            		sysLog.setClientip(clientip);
+            		LOGGER.info(sysLog.toString());
+            		sysLogService.insert(sysLog);
+            	}else{
+            		LOGGER.info("用户未登录");
+            	}
             } catch (Exception e) {
                 e.printStackTrace();
             }
