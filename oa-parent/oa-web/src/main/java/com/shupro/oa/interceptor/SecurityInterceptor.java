@@ -13,15 +13,13 @@ public class SecurityInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		String url = request.getRequestURI();
-		if (url.contains("tologin") || url.contains("static")) {
-			return true;
-		}else{
-			SysUser userInfo = (SysUser) request.getSession().getAttribute("userInfo");
-			if(userInfo == null){
-				response.sendRedirect("tologin");
-//				return false;
-			}
+		String requestURL = request.getRequestURI();
+		System.out.println(requestURL);
+		SysUser userInfo = (SysUser) request.getSession().getAttribute("userInfo");
+		if (userInfo == null) {
+			String url = request.getContextPath() + "/";
+			// 考虑到可能有多层路径,如sysUser/init,这时重定向建议使用绝对路径
+			response.sendRedirect(url + "tologin");
 		}
 		return true;
 	}

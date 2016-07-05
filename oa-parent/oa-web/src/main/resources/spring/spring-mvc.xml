@@ -95,8 +95,10 @@
     <mvc:interceptors>
 		<!-- 配置拦截的路径，默认是所有请求-->
 		<mvc:interceptor>
-			<mvc:mapping path="/home" /> 
-			<!-- <mvc:mapping path="/*/**" /> --> 
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/tologin"/>
+			<mvc:exclude-mapping path="/login"/>
+			<mvc:exclude-mapping path="/static/**"/>
 			<bean class="com.shupro.oa.interceptor.SecurityInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

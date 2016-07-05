@@ -15,6 +15,7 @@
     <div class="easyui-layout" style="width:100%;height:100%;">
 		<div data-options="region:'north'" style="height:50px">
 			logo
+			<p><a href="javascript:void(0);" class="easyui-linkbutton" onclick="logout()" icon="icon-clear" >安全退出</a></p>
 		</div>
 		<div data-options="region:'south'" style="height:30px;">
 			copyright
@@ -108,6 +109,25 @@
 		//更改centerPanel的title
 		function changeTitle(newTitle){
 			$('#centerPanel').panel('setTitle',newTitle);
+		}
+		
+		function logout(){
+			$.messager.confirm('提示','确定要退出吗?',function(r){
+	        	if(r){
+		        	$.messager.progress({
+			                title:'请稍后',
+			                msg:'正在退出...'
+			            });
+		        	$.post('${path }/logout', function(result) {
+		        			console.log(result);
+		                    if(result.success){
+		                    	$.messager.progress('close');
+		                        window.location.href='${path }';
+		                    }
+		                }, 'json');
+	        	}
+				
+			});
 		}
 		
 	</script>

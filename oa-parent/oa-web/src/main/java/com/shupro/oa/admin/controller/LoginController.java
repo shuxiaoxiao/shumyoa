@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shupro.oa.admin.model.SysUser;
@@ -62,17 +63,35 @@ public class LoginController {
     }
 
     /**
-     * 首页
+     * 安全退出(ajax)
      *
      * @param model
      * @return
      */
-    @RequestMapping(value = "/logout")
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody
+    public Result logoutAjax(HttpServletRequest request) {
+    	LOGGER.info("登出");
+    	//由于使用ajax，跳转有前端来控制
+    	request.getSession().removeAttribute("userInfo");
+    	Result result = new Result();
+    	result.setSuccess(true);
+    	
+        return result;
+    }
+    
+    /**
+     * 安全退出
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request) {
+    	LOGGER.info("登出");
     	//重定向到登录页面,如果有参数之类的建议使用RedirectAttributes
     	request.getSession().removeAttribute("userInfo");
     	
-        return "redirect:/tologin";
+    	return "redirect:/tologin";
     }
 }
