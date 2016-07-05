@@ -5,12 +5,19 @@
 
 多web项目暂时没实现
 
+===========版本：1.0.1==============
+更新时间：2016-7-15
+增加内容：
+(1)系统日志。aop实现
+(2)登录和主拦截器
+
+
 ===========版本：1.0.0==============
 更新时间：2016-6-30
 增加内容：
 (1)后端(model、dao、service、controller) + 前端(easyui) 代码生成。【只支持单表】
 (2)maven分模块开发
-	oa-app(model、dao、service), oa-app-web(controller、jsp)。 app代表模块
+	oa-app(model、dao、service), oa-app-web(controller、jsp)。 【app代表模块】
 (3)easyUI使用的组件
 	tabs(选项卡)、 accordion(分类,手风琴)、 layout(布局)
 	linkbutton(按钮)
