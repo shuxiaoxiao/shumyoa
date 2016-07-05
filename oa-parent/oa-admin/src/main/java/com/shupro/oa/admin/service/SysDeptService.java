@@ -10,13 +10,6 @@ import com.shupro.oa.vo.TreeNode;
 public interface SysDeptService extends BaseService<SysDept, Integer> {
 	
 	/**
-	 * 批量删除
-	 * @param ids	多个主键值，用","隔开
-	 * @return
-	 */
-	int deleteById(String ids);
-
-	/**
 	 * 根据pid 查询
 	 * @param pid
 	 * @return

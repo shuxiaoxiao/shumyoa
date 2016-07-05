@@ -15,6 +15,11 @@ public abstract class AbstractService<T, ID extends Serializable> implements Bas
 	public int deleteById(ID id) {
 		return baseMapper.deleteById(id);
 	}
+	
+	@Override
+	public int deleteById(String ids) {
+		return 0;
+	}
 
 //	@Override
 //	public int insertSelective(T record) {

@@ -14,7 +14,14 @@ public interface BaseService<T, ID extends Serializable> {
 	 * @return
 	 */
 	public int deleteById(ID id);
-
+	
+	/**
+	 * 批量删除
+	 * @param ids	多个主键值，用","隔开
+	 * @return
+	 */
+	public int deleteById(String ids);
+	
 	/**
 	 * 增加
 	 * @param record	对象
