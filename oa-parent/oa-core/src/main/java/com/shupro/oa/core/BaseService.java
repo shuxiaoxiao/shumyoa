@@ -16,7 +16,7 @@ public interface BaseService<T, ID extends Serializable> {
 	public int deleteById(ID id);
 	
 	/**
-	 * 批量删除
+	 * 批量删除(空实现)
 	 * @param ids	多个主键值，用","隔开
 	 * @return
 	 */

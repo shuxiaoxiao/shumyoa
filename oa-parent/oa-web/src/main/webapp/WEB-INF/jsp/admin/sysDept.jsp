@@ -126,7 +126,7 @@
 		    treeField:'name',
 		    fit:true ,//填充父容器
 		    rownumbers:true ,
-			singleSelect:false , //true为单选模式 ,false为多选
+			//singleSelect:false , //true为单选模式 ,false为多选
 		    columns:[[    
 				{field:'ck', width:50, checkbox: true},      
 				{field:'deptid',title:'部门id'},    
@@ -232,6 +232,7 @@
 	
 	/**修改*/
 	function initEdit(){
+		/*//多选下的内容
 		var row = $treeGrid.treegrid('getSelections');
 		if(row.length != 1){
 			$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');
@@ -245,15 +246,21 @@
 	        //数据回显
 	        $('#fm').form('load',row[0]);
 	        url='update';
-		}
-	    /* if (row){
+		} */
+	    var row = $treeGrid.treegrid('getSelected');
+	    if (row){
+	    	//清空表单
+			$('#fm').form('clear');
+			//如果上面的表单清空不好用,则换成jq的表单清空
+			//$('#fm').get(0).reset();
+			$('#dlg').dialog('open').dialog('setTitle','修改表单');
 	        $('#dlg').dialog('open').dialog('setTitle','修改表单');
 	        //数据回显
 	        $('#fm').form('load',row);
 	        url='update';
 	    }else{
 	    	$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');    
-	    } */
+	    }
 	}
 	
 	/**表单保存(含新增和修改)*/
@@ -288,28 +295,22 @@
 	
 	/**删除*/
 	function del(){
-		//此处是getSelections(返回所有被选中的行)
-		var row = $treeGrid.treegrid('getSelections');
-		
-		if(row.length <=0){
-			$.messager.show({
-				title:'提示信息!',
-				msg:'至少选择一行记录进行删除!'
-			});
-		} else {
-	        $.messager.confirm('提示','确定要删除此信息?',function(r){
+		var row = $treeGrid.treegrid('getSelected');
+	    if (row){
+	    	$.messager.confirm('提示','确定要删除此信息?',function(r){
 	        	if(r){
 		        	$.messager.progress({
 			                title:'请稍后',
 			                msg:'正在删除...'
 			            });
-	        		var ids = '';
+	        		/* var ids = '';
 					for(var i =0 ;i<row.length;i++){
 						ids += row[i].id + ',' ;
 					}
-					ids = ids.substring(0 , ids.length-1);
+					ids = ids.substring(0 , ids.length-1); */
 		            $.ajax({
-		            	url:'${path}/sysDept/delete/'+ids,
+		            	//url:'${path}/sysDept/deletes/'+ids,
+		            	url:'${path}/sysDept/delete/'+ row.id,
 		            	dataType:"text",
 		        		success:function(data){
 		        			$.messager.progress('close');
@@ -330,7 +331,20 @@
 		            });
 	        	}
 	        });
-		}
+	    }else{
+	    	$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');    
+	    }
+	  	/* //多选下的内容
+		//此处是getSelections(返回所有被选中的行)
+		var row = $treeGrid.treegrid('getSelections');
+		if(row.length <=0){
+			$.messager.show({
+				title:'提示信息!',
+				msg:'至少选择一行记录进行删除!'
+			});
+		} else {
+	        //删除操作
+		} */
 	}
 	
 </script>

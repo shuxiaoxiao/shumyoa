@@ -42,6 +42,14 @@ public class SysDeptServiceImpl extends AbstractService<SysDept, Integer> implem
 		return pageBean;
 	}
 	
+	//将物理删除修改为逻辑删除
+	@Override
+	public int deleteById(Integer id) {
+		SysDept sysDept = new SysDept(id,MyConstant.DISABLE);
+		sysDeptMapper.updateSelective(sysDept);
+		return 1;
+	}
+
 	@Override
 	@Transactional
 	public int deleteById(String ids) {

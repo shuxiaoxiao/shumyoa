@@ -18,7 +18,7 @@ public abstract class AbstractService<T, ID extends Serializable> implements Bas
 	
 	@Override
 	public int deleteById(String ids) {
-		return 0;
+		return 1;
 	}
 
 //	@Override

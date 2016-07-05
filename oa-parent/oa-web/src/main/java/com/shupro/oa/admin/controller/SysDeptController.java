@@ -139,15 +139,32 @@ public class SysDeptController {
     	}
     }
     
+	/**
+	 * 批量删除<br>
+	 * 重载方法时，最好将请求路径区别下,即其不同的名称 
+	 * 返回的是text
+	 */
+	@RequestMapping(value = "/deletes/{ids}", method = RequestMethod.GET)
+	@ResponseBody
+	public String delete(@PathVariable String ids) {
+		try {
+			sysDeptService.deleteById(ids);
+			return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+	}
+    
     /**
      * 删除
      * 返回的是text
      */
-    @RequestMapping(value = "/delete/{ids}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public String delete(@PathVariable String ids){
+    public String delete(@PathVariable int id){
     	try {
-    		sysDeptService.deleteById(ids);
+    		sysDeptService.deleteById(id);
     		return "success";
     	} catch (Exception e) {
     		e.printStackTrace();
