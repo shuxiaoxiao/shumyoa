@@ -24,6 +24,10 @@
 			<groupId>com.shupro.test</groupId>
 			<artifactId>oa-admin</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.shupro.test</groupId>
+			<artifactId>oa-shopping</artifactId>
+		</dependency>
 		<!-- <dependency>
 			<groupId>com.github.miemiedev</groupId>
 			<artifactId>mybatis-paginator</artifactId>

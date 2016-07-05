@@ -45,8 +45,11 @@
 						<a href="#" title="字典管理" fullTitle="权限管理 --字典管理" url="${path }/sysDictionary/init">字典管理</a>
 					</p>
 				</div>
-				<div title="Title2" style="padding:10px;">
-					content2
+				<div title="商品-消费管理" style="padding:10px;">
+					<p>
+						<img src="${staticPath }/images/user.png" />
+						<a href="#" title="商品管理" fullTitle="商品-消费管理 --商品管理" url="${path }/shopGoods/init">商品管理</a>
+					</p>
 				</div>
 				<div title="Title3" style="padding:10px">
 					content3

@@ -50,6 +50,11 @@
 				<artifactId>oa-admin</artifactId>
 				<version>${oa.version}</version>
 			</dependency>
+		  	<dependency>
+				<groupId>com.shupro.test</groupId>
+				<artifactId>oa-shopping</artifactId>
+				<version>${oa.version}</version>
+			</dependency>
 			
 			<dependency>
 			    <groupId>org.freemarker</groupId>

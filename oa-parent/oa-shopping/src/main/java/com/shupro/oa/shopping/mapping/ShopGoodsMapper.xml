@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shupro.oa.shopping.dao.ShopGoodsMapper" >
+  	<resultMap id="BaseResultMap" type="com.shupro.oa.shopping.model.ShopGoods" >
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="quantity" property="quantity"/>
+		<result column="createtime" property="createtime"/>
+		<result column="origprice" property="origprice"/>
+		<result column="discount" property="discount"/>
+		<result column="price" property="price"/>
+	</resultMap>
+       
+	<sql id="Base_Column_List" >
+		 id,name,quantity,createtime,origprice,discount,price
+	</sql>
+   
+	<!-- 动态查询条件 -->
+	<sql id="Example_Where_Clause">
+	where 1=1
+	<trim suffixOverrides="," >
+		<if test="id != null and id != '' ">
+		    and id = #{id}
+		</if>
+		<if test="name != null and name != '' ">
+		    and name = #{name}
+		</if>
+		<if test="quantity != null and quantity != '' ">
+		    and quantity = #{quantity}
+		</if>
+		<if test="createtime != null and createtime != '' ">
+		    and createtime = #{createtime}
+		</if>
+		<if test="origprice != null and origprice != '' ">
+		    and origprice = #{origprice}
+		</if>
+		<if test="discount != null and discount != '' ">
+		    and discount = #{discount}
+		</if>
+		<if test="price != null and price != '' ">
+		    and price = #{price}
+		</if>
+	
+	</trim>
+	</sql>
+ 
+	<!-- 根据id查询  -->
+	<select id="selectById"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select 
+		<include refid="Base_Column_List" /> 
+	 from shop_goods where id = #{id}
+	</select>
+
+	<!-- 条件查询所有(分页拦截的也是这个语句) -->
+	<select id="selectAll4Page" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from shop_goods
+		<include refid="Example_Where_Clause"/>
+	</select>
+   
+	<!-- 插入记录 -->
+	<insert id="insert" parameterType="com.shupro.oa.shopping.model.ShopGoods" >
+	  insert into shop_goods(id,name,quantity,origprice,discount,price)
+ values(#{id},#{name},#{quantity},#{origprice},#{discount},#{price})
+	</insert>
+
+	<!-- 根据id，修改记录-->  
+	 <update id="update" parameterType="com.shupro.oa.shopping.model.ShopGoods" >
+	  update shop_goods set name=#{name},quantity=#{quantity},origprice=#{origprice},discount=#{discount},price=#{price} where id=#{id}
+	 </update>
+ 
+	 <!-- 动态修改记录，只修改只不为空的字段 -->
+	<update id="updateSelective" parameterType="com.shupro.oa.shopping.model.ShopGoods" >
+		update shop_goods set 
+	<trim  suffixOverrides="," >
+	<if test="name != null  and name != '' ">
+		name=#{name},
+	</if>
+	<if test="quantity != null  ">
+		quantity=#{quantity},
+	</if>
+	<if test="createtime != null  ">
+		createtime=#{createtime},
+	</if>
+	<if test="origprice != null  ">
+		origprice=#{origprice},
+	</if>
+	<if test="discount != null  and discount != '' ">
+		discount=#{discount},
+	</if>
+	<if test="price != null  ">
+		price=#{price},
+	</if>
+	</trim> where id=#{id}
+	</update>
+
+	<!-- 删除记录 -->
+	<delete id="deleteById" parameterType="com.shupro.oa.shopping.model.ShopGoods" >
+		delete 	 from shop_goods where id = #{id}
+	</delete>
+  	
+</mapper>

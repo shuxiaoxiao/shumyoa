@@ -1,4 +1,4 @@
-package ${bussPackage}.controller;
+package com.shupro.oa.shopping.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ${bussPackage}.model.${className};
-import ${bussPackage}.service.${className}Service;
+import com.shupro.oa.shopping.model.ShopGoods;
+import com.shupro.oa.shopping.service.ShopGoodsService;
 import com.shupro.oa.utils.json.JsonUtil;
 import com.shupro.oa.utils.page.PageBean;
 
 @Controller
-@RequestMapping("/${lowerName}")
-public class ${className}Controller {
+@RequestMapping("/shopGoods")
+public class ShopGoodsController {
 
 	@Autowired
-	private ${className}Service ${lowerName}Service;
+	private ShopGoodsService shopGoodsService;
 
 	/**
 	 * 跳转页面
@@ -31,7 +31,7 @@ public class ${className}Controller {
 	@RequestMapping("/init")
 	public String init() {
 		
-		return "${autoModel.appName}/${lowerName}";
+		return "shopping/shopGoods";
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class ${className}Controller {
 		//查询域的查询条件
 		//map.put("deptid", request.getParameter("deptid"));
 		map.put("name", request.getParameter("name"));
-		PageBean<${className}> list = ${lowerName}Service.select2PageBean(map);
+		PageBean<ShopGoods> list = shopGoodsService.select2PageBean(map);
 		
 		return JsonUtil.obj2JsonStr(list);
 	}
@@ -61,10 +61,10 @@ public class ${className}Controller {
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
-    public String save(${className} ${lowerName}){
+    public String save(ShopGoods shopGoods){
 //    	Map<String,Object> map = new HashMap<>();
 //    	try {
-//    		${lowerName}Service.insert(${lowerName});
+//    		shopGoodsService.insert(shopGoods);
 //    		map.put("success", true);
 //        	map.put("msg", "保存成功");
 //		} catch (Exception e) {
@@ -73,7 +73,7 @@ public class ${className}Controller {
 //		}
 //    	return JsonUtil.obj2JsonStr(map);
     	try {
-    		${lowerName}Service.insert(${lowerName});
+    		shopGoodsService.insert(shopGoods);
     		return "success";
     	} catch (Exception e) {
     		e.printStackTrace();
@@ -87,9 +87,9 @@ public class ${className}Controller {
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
-    public String update(${className} ${lowerName}){
+    public String update(ShopGoods shopGoods){
     	try {
-    		${lowerName}Service.updateSelective(${lowerName});
+    		shopGoodsService.updateSelective(shopGoods);
     		return "success";
     	} catch (Exception e) {
     		e.printStackTrace();
@@ -105,7 +105,7 @@ public class ${className}Controller {
     @ResponseBody
     public String delete(@PathVariable String ids){
     	try {
-    		${lowerName}Service.deleteById(ids);
+    		shopGoodsService.deleteById(ids);
     		return "success";
     	} catch (Exception e) {
     		e.printStackTrace();
