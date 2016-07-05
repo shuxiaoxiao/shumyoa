@@ -22,4 +22,11 @@ public interface SysDeptService extends BaseService<SysDept, Integer> {
 	 * @return
 	 */
 	List<TreeNode> select2tree(List<SysDept> deptList);
+	
+	/**
+	 * 
+	 * @param deptList
+	 * @return
+	 */
+	List<SysDept> select2treeGrid(List<SysDept> deptList);
 }

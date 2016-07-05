@@ -33,8 +33,8 @@ public class SysRoleServiceImpl extends AbstractService<SysRole, Integer> implem
 		pageBean.setPageSize(Integer.parseInt(map.get("pageSize").toString()));
 		//注意map要先设置pageBean,拦截器里面要获取其值
 		map.put("pageBean", pageBean);
-		pageBean.setRows(sysRoleMapper.selectAll4Page(map));
 		map.put("needPage", true);//是否分页，默认是false不分页
+		pageBean.setRows(sysRoleMapper.selectAll4Page(map));
 		return pageBean;
 	}
 	

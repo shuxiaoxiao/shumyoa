@@ -14,16 +14,18 @@
 			<ul id="sysDeptTree"></ul> 
 		</div>
 		<div data-options="region:'center' ">
-			<div style="height:5%;padding: 3px;">
+			<%--treegrid不适合做搜索查询  --%>
+			<table id="sysDeptTreeGrid"></table>
+			<!-- <div style="height:5%;padding: 3px;">
 				部门编号：<input type="text" id="query_deptid" />&nbsp;
 				部门名称：<input type="text" id="query_name" />&nbsp;
 				<a class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search' " onclick="searchData();">查询</a>
-			</div>
+			</div> 
 			<%--为了grid的fit属性起效果 --%>
 			<div style="height:95%;">
-				<table id="sysDeptTreeGrid"></table>
-				<!-- <table id="sysDeptGrid"></table> -->
+				<table id="sysDeptGrid"></table>
 			</div>
+			-->
 		</div>
 		
 		<!-- 表单(放在layout里面，放在外面会影响grid的高度) -->
@@ -98,6 +100,7 @@
 		//dnd: true	//是否启用拖拽功能,true是
 		onLoadSuccess : function(node, data){
 			var rooNode = $tree.tree('getRoot');
+			//console.log(rooNode);
 			//展开根节点
 			$tree.tree('expand',rooNode.target);
 			//生效,但是是展开所有
@@ -108,13 +111,13 @@
 	/**
 	 * 查询用户
 	 */
+	/*
 	function searchData(){
-
-		$grid.datagrid('load',{
+		 $grid.datagrid('load',{
 			//'deptid': $('#query_deptid').val(),
 			'name': $('#query_name').val()
-		});
-	}
+		}); 
+	}*/
 	
 	$(function(){
 		$treeGrid.treegrid({    
@@ -122,7 +125,10 @@
 		    idField:'deptid',    
 		    treeField:'name',
 		    fit:true ,//填充父容器
+		    rownumbers:true ,
+			singleSelect:false , //true为单选模式 ,false为多选
 		    columns:[[    
+				{field:'ck', width:50, checkbox: true},      
 				{field:'deptid',title:'部门id'},    
 				{field:'name',title:'部门名称'},    
 				{field:'pid',title:'父id'},    
@@ -130,10 +136,44 @@
 				{field:'createtime',title:'创建时间'},    
 				{field:'description',title:'描述'},    
 				{field:'sotid',title:'排序号'}     
-		    ]]    
+		    ]],
+		    toolbar:[{
+	    		text:'新 增' ,
+				iconCls:'icon-add' , 
+				handler:function(){
+	    			initAdd();
+				}
+		    },{
+		    	text:'修 改' ,
+				iconCls:'icon-edit' , 
+				handler:function(){
+					initEdit();
+				}
+		     },{
+		    	text:'删 除' ,
+				iconCls:'icon-remove' , 
+				handler:function(){
+		    		del();
+				}
+		     },{
+		    	text:'刷新' ,
+				iconCls:'icon-refresh' , 
+				handler:function(){
+					$treeGrid.treegrid('reload');
+				}
+		    }],
+		    onLoadSuccess : function(node, data){
+				var rooNode = $treeGrid.treegrid('getRoot');
+				//console.log(rooNode);
+				//展开根节点
+				$treeGrid.treegrid('expand',rooNode.deptid);//指定的是idField对应的值
+				//生效,但是是展开所有
+				//$treeGrid.treegrid('expandAll');
+			}
 		});  
 		
 		
+		/* 
 		$grid.datagrid({
 			idField:'id' ,		//只要创建数据表格 就必须要加 ifField
 			fit:true ,//填充父容器
@@ -173,7 +213,7 @@
 		    		del();
 				}
 		    }]
-		});
+		}); */
 	});
 	
 	var url='';//表单提交url
@@ -192,15 +232,28 @@
 	
 	/**修改*/
 	function initEdit(){
-		var row = $grid.datagrid('getSelected');
-	    if (row){
+		var row = $treeGrid.treegrid('getSelections');
+		if(row.length != 1){
+			$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');
+		}else{
+			//清空表单
+			$('#fm').form('clear');
+			//如果上面的表单清空不好用,则换成jq的表单清空
+			//$('#fm').get(0).reset();
+			$('#dlg').dialog('open').dialog('setTitle','修改表单');
+			
+	        //数据回显
+	        $('#fm').form('load',row[0]);
+	        url='update';
+		}
+	    /* if (row){
 	        $('#dlg').dialog('open').dialog('setTitle','修改表单');
 	        //数据回显
 	        $('#fm').form('load',row);
 	        url='update';
 	    }else{
 	    	$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');    
-	    }
+	    } */
 	}
 	
 	/**表单保存(含新增和修改)*/
@@ -223,7 +276,7 @@
 	       	 	$.messager.progress('close');
 	            if (result=='success'){
 		        	$('#dlg').dialog('close');
-		        	$grid.datagrid('reload');
+		        	$treeGrid.treegrid('reload');
 	            }else if(result=='error'){
 	            	$.messager.alert('警告','保存失败');
 	            }else{
@@ -236,7 +289,7 @@
 	/**删除*/
 	function del(){
 		//此处是getSelections(返回所有被选中的行)
-		var row = $grid.datagrid('getSelections');
+		var row = $treeGrid.treegrid('getSelections');
 		
 		if(row.length <=0){
 			$.messager.show({
@@ -261,9 +314,9 @@
 		        		success:function(data){
 		        			$.messager.progress('close');
 		        			if (data=='success'){
-		                    	$grid.datagrid('reload');
+		                    	$treeGrid.treegrid('reload');
 		                    	//清空idField(避免删除后在进行修改操作的bug)
-								$grid.datagrid('unselectAll');
+								$treeGrid.treegrid('unselectAll');
 		                    }else if(data=='error'){
 		                    	$.messager.alert('警告','删除失败');
 		                    }else{

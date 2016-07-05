@@ -29,9 +29,23 @@ public class SysDeptController {
 	@ResponseBody
 	public String treeGrid(HttpServletRequest request) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		List<SysDept> list = sysDeptService.selectAll4Page(map);
+		String pid = request.getParameter("id");
+		if (pid == null) {
+			pid = "0";
+		}
+		List<SysDept> list = sysDeptService.selectByPid(pid);
+//		//treegrid不适合做搜索查询
+//		String deptid = request.getParameter("deptid");
+//		String name = request.getParameter("name");
+//		map.put("deptid", deptid);
+//		map.put("name", name);
+//		//没有查询条件时
+//		if(deptid == null && name == null){
+//			map.put("pid",pid);
+//		}
+//		List<SysDept> list = sysDeptService.selectAll4Page(map);
 		
-		return JsonUtil.obj2JsonStr(list);
+		return JsonUtil.obj2JsonStr(sysDeptService.select2treeGrid(list));
 	}
 	
 	@RequestMapping("/tree")

@@ -1,8 +1,11 @@
-﻿mvn clean source:jar install
+﻿
+===========部署操作==============
+mvn clean source:jar install
 	项目打包同时生成源码包
 
-项目名：myoa
-
+===========注意事项==============
+1.如果xml中有关"创建时间"的默认值，则修改xml和修改数据库(加上默认值)
+2.如果有like语句,修改相应xml的语句加上 CONCAT('%',#{province},'%')
 多web项目暂时没实现
 
 ===========版本：1.0.1==============
@@ -32,5 +35,5 @@
 	datagrid(数据表格)
 	
 	tree(树)
-	treegrid(树形表格) 【数据组装失败】
+	treegrid(树形表格)
 	

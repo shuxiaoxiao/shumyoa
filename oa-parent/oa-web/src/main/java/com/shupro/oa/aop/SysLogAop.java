@@ -45,11 +45,13 @@ public class SysLogAop {
         String strMethodName = point.getSignature().getName();
         String strClassName = point.getTarget().getClass().getName();
         Object[] params = point.getArgs();
+        SysUser userInfo = null;
         String strMessage = "";
         String clientip = "";
         HttpServletRequest request = null;
         if (params != null && params.length > 0) {
             request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            userInfo = (SysUser) request.getSession().getAttribute("userInfo");
             // 获取请求ip
             clientip = request.getRemoteAddr();
             // 获取请求地址  
@@ -65,23 +67,27 @@ public class SysLogAop {
 
         if (isWriteLog(strMethodName)) {
             try {
-            	SysUser userInfo = (SysUser) request.getSession().getAttribute("userInfo");
 //                Subject currentUser = SecurityUtils.getSubject();
 //                PrincipalCollection collection = currentUser.getPrincipals();
 //                if (null != collection) {
 //                    String loginName = collection.getPrimaryPrincipal().toString();
-            	if(null != userInfo) {
-            		SysLog sysLog = new SysLog();
-            		sysLog.setLoginname(userInfo.getLoginname());
-            		sysLog.setRolename("admin");
-            		sysLog.setContent(strMessage);
-            		sysLog.setCreatetime(new Date());
-            		sysLog.setClientip(clientip);
-            		LOGGER.info(sysLog.toString());
-            		sysLogService.insert(sysLog);
-            	}else{
-            		LOGGER.info("用户未登录");
-            	}
+            	if (null != request) {
+            		if(null != userInfo) {
+                		SysLog sysLog = new SysLog();
+                		sysLog.setLoginname(userInfo.getLoginname());
+                		sysLog.setRolename("admin");
+                		sysLog.setContent(strMessage);
+                		sysLog.setCreatetime(new Date());
+                		sysLog.setClientip(clientip);
+                		LOGGER.info(sysLog.toString());
+                		sysLogService.insert(sysLog);
+                	}else{
+                		LOGGER.info("用户未登录");
+                	}
+				}else{
+					LOGGER.info("页面加载操作");
+				}
+            	
             } catch (Exception e) {
                 e.printStackTrace();
             }
