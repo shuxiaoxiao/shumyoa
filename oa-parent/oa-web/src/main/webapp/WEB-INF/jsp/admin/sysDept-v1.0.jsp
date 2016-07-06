@@ -10,9 +10,19 @@
   
   <body>
     <div class="easyui-layout" style="width:100%;height:100%;">
+		<div data-options="region:'west',split:true " style="width:15%;">
+			<ul id="sysDeptTree"></ul> 
+		</div>
 		<div data-options="region:'center' ">
-			<%--treegrid不适合做搜索查询  --%>
-			<table id="sysDeptTreeGrid"></table>
+			<div style="height:5%;padding: 3px;">
+				部门编号：<input type="text" id="query_deptid" />&nbsp;
+				部门名称：<input type="text" id="query_name" />&nbsp;
+				<a class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search' " onclick="searchData();">查询</a>
+			</div> 
+			<%--为了grid的fit属性起效果 --%>
+			<div style="height:95%;">
+				<table id="sysDeptGrid"></table>
+			</div>
 		</div>
 		
 		<!-- 表单(放在layout里面，放在外面会影响grid的高度) -->
@@ -78,29 +88,58 @@
 	
 <script type="text/javascript">
 
-	var $treeGrid = $('#sysDeptTreeGrid');
+	var $grid = $('#sysDeptGrid');
+	var $tree = $('#sysDeptTree');
 	var $combotree = $('#pidCombotree');
+	/**
+	 * 查询用户
+	 */
+	function searchData(){
+		 $grid.datagrid('load',{
+			'deptid': $('#query_deptid').val(),
+			'name': $('#query_name').val()
+		}); 
+	}
 	
 	$(function(){
 		var treeURL = '${path}/sysDept/tree';
+		$tree.tree({
+			url:treeURL , 
+			animate:true ,
+			//checkbox:true ,
+			//cascadeCheck : false ,
+			//onlyLeafCheck: true, //是否只在末级节点之前显示复选框,true是。与checkbox属性配套用
+			//dnd: true	//是否启用拖拽功能,true是
+			onLoadSuccess : function(node, data){
+				var rooNode = $tree.tree('getRoot');
+				//console.log(rooNode);
+				//展开根节点
+				$tree.tree('expand',rooNode.target);
+				//生效,但是是展开所有
+				//$tree.tree('expandAll');
+			}
+		});
 		
-		$treeGrid.treegrid({    
-		    url:'${path}/sysDept/treeGrid',    
-		    idField:'deptid',    
-		    treeField:'name',
-		    fit:true ,//填充父容器
-		    rownumbers:true ,
-			//singleSelect:false , //true为单选模式 ,false为多选
-		    columns:[[    
-				{field:'ck', width:50, checkbox: true},      
+		$grid.datagrid({
+			idField:'id' ,		//只要创建数据表格 就必须要加 ifField
+			fit:true ,//填充父容器
+			fitColumns:true ,  //自动展开/收缩列的大小，以适应网格的宽度，防止水平滚动。
+			striped: true , //隔行变色特性 
+			loadMsg: '数据正在加载,请耐心的等待...' ,
+			rownumbers:true ,
+			pagination: true , //启用分页
+			//singleSelect:true , //单选模式 
+			url:'${path}/sysDept/list', 
+		    columns:[[
+		        {field:'ck', width:50, checkbox: true},
 				{field:'deptid',title:'部门id'},    
 				{field:'name',title:'部门名称'},    
 				{field:'pid',title:'父id'},    
 				{field:'levels',title:'层级'},    
 				{field:'createtime',title:'创建时间'},    
 				{field:'description',title:'描述'},    
-				{field:'sotid',title:'排序号'}     
-		    ]],
+				{field:'sotid',title:'排序号'},    
+		    ]] ,
 		    toolbar:[{
 	    		text:'新 增' ,
 				iconCls:'icon-add' , 
@@ -119,22 +158,8 @@
 				handler:function(){
 		    		del();
 				}
-		     },{
-		    	text:'刷新' ,
-				iconCls:'icon-refresh' , 
-				handler:function(){
-					$treeGrid.treegrid('reload');
-				}
-		    }],
-		    onLoadSuccess : function(node, data){
-				var rooNode = $treeGrid.treegrid('getRoot');
-				//console.log(rooNode);
-				//展开根节点
-				$treeGrid.treegrid('expand',rooNode.deptid);//指定的是idField对应的值
-				//生效,但是是展开所有
-				//$treeGrid.treegrid('expandAll');
-			}
-		});  
+		    }]
+		});
 		
 		$combotree.combotree({
 			url:treeURL ,  
@@ -170,7 +195,7 @@
 	/**修改*/
 	function initEdit(){
 		/*//多选下的内容
-		var row = $treeGrid.treegrid('getSelections');
+		var row = $grid.datagrid('getSelections');
 		if(row.length != 1){
 			$.messager.alert('警告','请选择一行操作数据，且只能选择一行！');
 		}else{
@@ -184,13 +209,13 @@
 	        $('#fm').form('load',row[0]);
 	        url='update';
 		} */
-	    var row = $treeGrid.treegrid('getSelected');
+	    var row = $grid.datagrid('getSelected');
 	    if (row){
 	    	//清空表单
 			$('#fm').form('clear');
 			//如果上面的表单清空不好用,则换成jq的表单清空
 			//$('#fm').get(0).reset();
-	        $('#dlg').dialog('open').dialog('setTitle','修改表单');
+			$('#dlg').dialog('open').dialog('setTitle','修改表单');
 	        //数据回显
 	        $('#fm').form('load',row);
 	        url='update';
@@ -219,7 +244,8 @@
 	       	 	$.messager.progress('close');
 	            if (result=='success'){
 		        	$('#dlg').dialog('close');
-		        	$treeGrid.treegrid('reload');
+		        	$grid.datagrid('reload');
+		        	$tree.tree('reload');
 	            }else if(result=='error'){
 	            	$.messager.alert('警告','保存失败');
 	            }else{
@@ -231,7 +257,7 @@
 	
 	/**删除*/
 	function del(){
-		var row = $treeGrid.treegrid('getSelected');
+		var row = $grid.datagrid('getSelected');
 	    if (row){
 	    	$.messager.confirm('提示','确定要删除此信息?',function(r){
 	        	if(r){
@@ -251,9 +277,10 @@
 		        		success:function(data){
 		        			$.messager.progress('close');
 		        			if (data=='success'){
-		                    	$treeGrid.treegrid('reload');
+		        				$grid.datagrid('reload');
+		                    	$tree.tree('reload');
 		                    	//清空idField(避免删除后在进行修改操作的bug)
-								$treeGrid.treegrid('unselectAll');
+								$grid.datagrid('unselectAll');
 		                    }else if(data=='error'){
 		                    	$.messager.alert('警告','删除失败');
 		                    }else{
@@ -272,7 +299,7 @@
 	    }
 	  	/* //多选下的内容
 		//此处是getSelections(返回所有被选中的行)
-		var row = $treeGrid.treegrid('getSelections');
+		var row = $grid.datagrid('getSelections');
 		if(row.length <=0){
 			$.messager.show({
 				title:'提示信息!',

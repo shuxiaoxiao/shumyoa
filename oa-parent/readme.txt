@@ -6,20 +6,32 @@ mvn clean source:jar install
 ===========注意事项==============
 1.如果xml中有关"创建时间"的默认值，则修改xml和修改数据库(加上默认值)
 2.如果有like语句,修改相应xml的语句加上 CONCAT('%',#{province},'%')
+
 多web项目暂时没实现
 
 ===========版本：1.0.1==============
+更新时间：2016-7-5
+增加内容：
+(1)安全退出
+(2)bug修改:自动生成代码的模板优化;主拦截器多层次的路径，重定向的问题
+(3)添加shopping模块
+
 更新时间：2016-7-4
 增加内容：
 (1)系统日志。aop实现
 (2)登录和主拦截器
 
+===========版本：1.0.0==============
+更新时间：2016-7-6
+增加内容：
+easyUI使用的组件
+	combotree(树形下拉框)、 combogrid(数据表格下拉框)	
+
 更新时间：2016-7-5
 增加内容：
-(1)安全退出
-(2)
+easyUI使用的组件
+	treegrid(树形表格)
 
-===========版本：1.0.0==============
 更新时间：2016-6-30
 增加内容：
 (1)后端(model、dao、service、controller) + 前端(easyui) 代码生成。【只支持单表】
@@ -30,10 +42,9 @@ mvn clean source:jar install
 	linkbutton(按钮)
 	form(表单)以及form组件
 		textbox(文本框)、 combobox(下拉列表框)、  datebox(日期输入框)、 numberbox(数值输入框)
-		combotree(树形下拉框)、 combogrid(数据表格下拉框)	【数据组装失败】
+		
 	dialog(对话框窗口)、 messager(消息窗口)
 	datagrid(数据表格)
-	
 	tree(树)
-	treegrid(树形表格)
+	
 	

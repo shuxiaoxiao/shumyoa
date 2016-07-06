@@ -85,10 +85,12 @@ public class SysDeptServiceImpl extends AbstractService<SysDept, Integer> implem
 					node.setChecked(false);
 					node.setText(dept.getName());//部门名称
 					node.setPid(dept.getPid());//父级部门ID
-					node.setState(dept.getState());//节点状态，'open' 或 'closed'
-//					if(selectByPid(dept.getDeptid()).size() >0){
-//						node.setState("closed");
-//					}
+					//node.setState(dept.getState());//节点状态，'open' 或 'closed'
+					if(selectByPid(dept.getDeptid()).size() >0){
+						node.setState("closed");
+					}else{
+						node.setState("open");
+					}
 //					Map<String,Object> map = new HashMap<String,Object>();
 //					node.setAttributes(map);
 					
