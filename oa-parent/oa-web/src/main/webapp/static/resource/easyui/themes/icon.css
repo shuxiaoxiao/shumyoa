@@ -1,4 +1,8 @@
 /*============新增（开始）=============*/
+.icon-excel{
+	background:url('icons/excel.png') no-repeat center center;
+}
+
 .icon-btn{
 	background:url('icons/btn.png') no-repeat center center;
 }
@@ -7,7 +11,7 @@
 	background:url('icons/refresh.png') no-repeat center center;
 }
 
-.icon-del{
+.icon-new-remove{
 	background:url('icons/del.png') no-repeat center center;
 }
 

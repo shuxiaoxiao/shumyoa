@@ -121,7 +121,7 @@
 				}
 		     },{
 		    	text:'刷新' ,
-				iconCls:'icon-refresh' , 
+				iconCls:'icon-reload' , 
 				handler:function(){
 					$treeGrid.treegrid('reload');
 				}
@@ -203,7 +203,8 @@
 	function save(){
 		$('#fm').form('submit',{
 	        url: '${path}/sysDept/' + url,
-	        onSubmit: function(param){
+	        //不做其他处理,onSubmit可以省略
+	        /* onSubmit: function(param){
 	       		var isValid = $(this).form('validate');
 				if(isValid){
 					$.messager.progress({
@@ -212,7 +213,7 @@
 						});
 				 }
 	            return isValid;
-	        },
+	        }, */
 	        success: function(result){
 	        	var result = JSON.parse(result);//Json对象
 	        	//var result = $.parseJSON(result);//jq对象

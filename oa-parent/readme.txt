@@ -25,7 +25,7 @@ mvn clean source:jar install
 更新时间：2016-7-6
 增加内容：
 easyUI使用的组件
-	combotree(树形下拉框)、 combogrid(数据表格下拉框)	
+	combotree(树形下拉框)
 
 更新时间：2016-7-5
 增加内容：

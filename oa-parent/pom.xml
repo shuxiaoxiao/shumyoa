@@ -194,6 +194,35 @@
 				<artifactId>commons-collections</artifactId>
 				<version>3.2.1</version>
 			</dependency>
+			<!-- apache commom(开始) -->	
+			<!-- 文件上传 -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>1.2.2</version>
+			</dependency>
+			<!-- java.lang包的扩展 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.10</version>
+			</dependency>
+			<dependency>
+			    <groupId>commons-beanutils</groupId>
+			    <artifactId>commons-beanutils</artifactId>
+			    <version>1.9.2</version>
+			</dependency>
+		<!-- apache commom(结束) -->	
 			
 			<dependency>
 			    <groupId>org.slf4j</groupId>
@@ -244,30 +273,6 @@
 			    <version>${jackson.version}</version>
 			</dependency> -->
 		
-		<!-- apache commom(开始) -->	
-			<!-- 文件上传 -->
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>2.4</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>1.2.2</version>
-			</dependency>
-			<!-- java.lang包的扩展 -->
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.4</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>1.10</version>
-			</dependency>
-		<!-- apache commom(结束) -->	
 		    <!--其实不引入poi而是引入poi-ooxml就会自动引入操作xlsx文件所用到的其他包  -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
