@@ -6,6 +6,7 @@ mvn clean source:jar install
 ===========注意事项==============
 1.如果xml中有关"创建时间"的默认值，则修改xml和修改数据库(加上默认值)
 2.如果有like语句,修改相应xml的语句加上 CONCAT('%',#{province},'%')
+3.easyui使用js方式时,需要渲染的组件放在$(function(){});里面，避免出现渲染有bug
 
 多web项目暂时没实现
 

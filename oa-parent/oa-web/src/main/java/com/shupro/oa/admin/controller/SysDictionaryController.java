@@ -1,6 +1,7 @@
 package com.shupro.oa.admin.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -51,6 +52,24 @@ public class SysDictionaryController {
 		//map.put("deptid", request.getParameter("deptid"));
 		map.put("name", request.getParameter("name"));
 		PageBean<SysDictionary> list = sysDictionaryService.select2PageBean(map);
+		
+		return JsonUtil.obj2JsonStr(list);
+	}
+	
+	/**
+	 * 查询数据给下拉框
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/select2combo/{pid}")
+	@ResponseBody
+	public String select2combo(HttpServletRequest request,@PathVariable String pid) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		//查询域的查询条件
+//		map.put("pid", request.getParameter("pid"));
+		map.put("pid", pid);
+		List<SysDictionary> list = sysDictionaryService.selectAll4Page(map);
 		
 		return JsonUtil.obj2JsonStr(list);
 	}

@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import com.shupro.oa.utils.MyBeanUtil;
 import com.shupro.oa.utils.excel.ExcelInfo;
+import com.shupro.oa.utils.excel.ExcelUtil;
 import com.shupro.oa.utils.excel.POIUtil;
 import com.shupro.oa.utils.lang.StringUtil;
 
@@ -39,7 +40,7 @@ public class MyTest {
 		list.add(map1);
 		
 		ExcelInfo excelInfo = new ExcelInfo("成绩表",titles,fields,list);
-		POIUtil.writeXls03(excelInfo).write(outStream);
+		ExcelUtil.writeXls03(excelInfo).write(outStream);
 		outStream.close();
 	}
 	

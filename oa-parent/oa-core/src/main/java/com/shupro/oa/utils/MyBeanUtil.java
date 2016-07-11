@@ -21,7 +21,8 @@ import org.apache.commons.lang3.StringUtils;
  * BeanUtils.populate(obj, map); Map转成Bean
  * BeanUtils.copyProperties(dest, orig); Bean的复制
  * @author shu
- *
+ * http://blog.csdn.net/cuidiwhere/article/details/8130434
+ * http://www.oschina.net/code/snippet_1864608_37795
  */
 public class MyBeanUtil{
 	
@@ -44,6 +45,7 @@ public class MyBeanUtil{
 	/**
 	 * Map转成Bean <br>
 	 * 不依赖BeanUtils工具类的实现
+	 * javaBean与Map<String,Object>互转利用到了java的内省（ Introspector ）和反射（reflect）机制。 其思路为： 通过类 Introspector 来获取某个对象的 BeanInfo 信息，然后通过 BeanInfo 来获取属性的描述器PropertyDescriptor，再利用属性描述器获取某个属性对应的 getter/setter 方法，然后通过反射机制来getter和setter。
 	 * @param map
 	 * @param obj
 	 */

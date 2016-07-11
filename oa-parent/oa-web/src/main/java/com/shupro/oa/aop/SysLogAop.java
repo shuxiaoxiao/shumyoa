@@ -95,9 +95,9 @@ public class SysLogAop {
 
         return point.proceed();
     }
-
+    //init开头的方法都暂时记录,为了记录点击次数
     private boolean isWriteLog(String method) {
-        String[] pattern = {"login", "logout", "add", "save", "insert", "edit", "update", "delete", "init", "grant"};
+        String[] pattern = {"login", "logout", "init", "add", "save", "insert", "edit", "update", "delete", "grant"};
         for (String s : pattern) {
             if (method.indexOf(s) > -1) {
                 return true;
