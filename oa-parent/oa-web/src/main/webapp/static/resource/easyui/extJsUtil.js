@@ -239,12 +239,41 @@ $.extend($.fn.treegrid.methods, gridTooltipOptions);
  * 扩展validatebox，添加验证两次密码功能
  */
 $.extend($.fn.validatebox.defaults.rules, {
-    eqPwd : {
+    //二次密码是否一致
+	eqPwd : {
         validator : function(value, param) {
             return value == $(param[0]).val();
         },
         message : '密码不一致！'
-    }
+    },
+	//  只允许输入英文字母或数字
+	engNum: {
+	    validator: function (value, param) {
+	        return /^[0-9a-zA-Z]*$/.test(value);
+	    },
+	    message: '请输入英文字母或数字'
+	},
+	//  只允许汉字、英文字母或数字
+	chsEngNum: {
+	    validator: function (value, param) {
+	        return /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[a-zA-Z0-9])*$/.test(value);
+	    },
+	    message: '只允许汉字、英文字母或数字。'
+	},
+    /**
+     * 手机号码: 
+     * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 17[6, 7, 8], 18[0-9], 170[0-9]
+     * 移动号段: 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
+     * 联通号段: 130,131,132,155,156,185,186,145,176,1709
+     * 电信号段: 133,153,180,181,189,177,1700
+     */
+	mobile: {
+	    validator: function (value, param) { 
+	    	return /^1(3[0-9]|4[57]|5[0-35-9]|7[6-8]|8[0-9]|70)\\d{8}$/.test(value);
+	    },
+	    message: "不符合手机号码(中国)格式."
+	}
+	
 });
 
 //扩展tree，使其可以获取实心节点

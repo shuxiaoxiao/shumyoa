@@ -67,6 +67,16 @@ public class DemoController {
     	return "/demo/3-form/dialog-form";
     }
     
+    @RequestMapping(value = "/initForm-valide")
+    public String initFormValide(Model model) {
+    	return "/demo/3-form/form-valide";
+    }
+    
+    @RequestMapping(value = "/initForm-file")
+    public String initFormFile(Model model) {
+    	return "/demo/3-form/form-file";
+    }
+    
     @RequestMapping(value = "/initComboBox")
     public String initComboBox(Model model) {
     	return "/demo/3-combo/basic-combo";
@@ -77,6 +87,21 @@ public class DemoController {
     	return "/demo/3-combo/combo-js";
     }
     
+    @RequestMapping(value = "/initComboBox-cascade")
+    public String initComboBox3(Model model) {
+    	return "/demo/3-combo/combo-cascade";
+    }
+    
+    @RequestMapping(value = "/initCombogrid")
+    public String initCombogrid(Model model) {
+    	return "/demo/3-combo/combogrid";
+    }
+    
+    @RequestMapping(value = "/initCombotree")
+    public String initCombotree(Model model) {
+    	return "/demo/3-combo/combotree";
+    }
+    
     @RequestMapping(value = "/initTree")
     public String initTree(Model model) {
     	return "/demo/6-tree/tree";
@@ -85,6 +110,11 @@ public class DemoController {
     @RequestMapping(value = "/initTree-js")
     public String initTree2(Model model) {
     	return "/demo/6-tree/tree-js";
+    }
+    
+    @RequestMapping(value = "/initTreegrid")
+    public String initTreegrid(Model model) {
+    	return "/demo/6-tree/treegrid";
     }
     
 

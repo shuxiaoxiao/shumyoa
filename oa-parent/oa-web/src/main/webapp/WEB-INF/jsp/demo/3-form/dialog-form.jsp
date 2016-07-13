@@ -14,6 +14,12 @@
 	</div>
 	<div id="dlg" class="easyui-dialog" style="width:300px;height:400px;padding:10px"
 		data-options="iconCls:'icon-save',title:'Basic Dialog',buttons:'#dlg-buttons' ">
+	<%--方法解释
+	submit : 表单提交
+  	load ：读取记录填充到表单中。数据参数可以是一个字符串或一个对象类型
+  	clear : 清除表单数据
+  	reset : 重置表单数据
+  	 --%>		
 		<form id="ff" method="post">
 	    	<table cellpadding="5">
 	    		<tr>
@@ -54,6 +60,7 @@
 		<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-ok' " onclick="getFormVals1()" >取值1</a>
 		<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-ok' " onclick="getFormVals2()" >取值2</a>
 		<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-clear' " onclick="clearForm()" >清空</a>
+		<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-clear' " onclick="resetForm()" >重置</a>
 		<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-cancel' " onclick="$('#dlg').dialog('close');">取消</a>
 	</div>
 	
@@ -91,6 +98,13 @@
 		function clearForm(){
 			//清空表单(首选)
 			$form.form('clear');
+			//如果上面的表单清空不好用,则换成jq的表单清空
+			//$form.get(0).reset();
+		}
+		
+		function resetForm(){
+			//重置表单(首选)
+			$form.form('reset');
 			//如果上面的表单清空不好用,则换成jq的表单清空
 			//$form.get(0).reset();
 		}
