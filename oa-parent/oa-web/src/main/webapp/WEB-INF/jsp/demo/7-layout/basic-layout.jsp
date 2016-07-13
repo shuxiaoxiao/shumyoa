@@ -9,8 +9,10 @@
   </head>
   
   <body>
-  	<%--
-  		split:true,可缩动
+  	<%--属性解释
+	region : 布局面板位置，可用的值有：north, south, east, west, center
+	split : true时用户可以通过分割栏改变面板大小,默认为false
+	href : 用于读取远程站点数据的URL链接,如果是某个页面则只加载<body></body>里面的内容
   	 --%>
     <div class="easyui-layout" style="width:100%;height:100%;">
 		<div data-options="region:'north'" style="height:50px">

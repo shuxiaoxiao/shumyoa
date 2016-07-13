@@ -41,36 +41,34 @@
 	  	 --%>
 		<%--js生成的宽度有bug,用$(function(){});	包裹--%>
 		var $panel = $('#p');
-		console.info('进入1');
-	$(function(){
-		console.info('进入2');
-		$panel.panel({
-			width:700,
-			height:350,
-			title:'Basic Panel',
-			content:'<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>',
-			iconCls:'icon-save',
-			collapsible:true,
-			minimizable:true,
-			maximizable:true,
-			closable:true,
-			/*tools:'#tt',
-			footer:'#footer'*/
-			tools: [{
-			    iconCls:'icon-add',    
-			    handler:function(){
-			    	$.messager.alert('警告','add');
-			    }    
-			  },'-',//空按钮
-			  {
-			    iconCls:'icon-save',    
-			    handler:function(){
-			    	alert('save')
-			    }    
-			}]
-
-		});
-	});		
+		$(function(){
+			$panel.panel({
+				width:700,
+				height:350,
+				title:'Basic Panel',
+				content:'<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>',
+				iconCls:'icon-save',
+				collapsible:true,
+				minimizable:true,
+				maximizable:true,
+				closable:true,
+				/*tools:'#tt',
+				footer:'#footer'*/
+				tools: [{
+				    iconCls:'icon-add',    
+				    handler:function(){
+				    	$.messager.alert('警告','add');
+				    }    
+				  },'-',//空按钮
+				  {
+				    iconCls:'icon-save',    
+				    handler:function(){
+				    	alert('save')
+				    }    
+				}]
+	
+			});
+		});		
 	</script>
   </body>
 </html>

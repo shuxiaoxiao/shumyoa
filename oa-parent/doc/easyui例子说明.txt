@@ -1,10 +1,13 @@
 
 ==============  Easyui 1.4 例子说明  （注意学习顺序，如果语法遗忘 最好查看 jQuery easyui API） ============
 使用js方式时,需要渲染的组件放在$(function(){});里面。
-	使用js方式初始化的组件推荐有  grid, tree, combobox, combotree, treegrid
+使用js方式初始化的组件推荐有  grid, tree, combobox, combotree, treegrid
 
-	1、linkbutton(按钮)
-		简单用法
+	1、button(按钮)
+		linkbutton(按钮)
+			简单用法
+		switchbutton(开关按钮)
+			简单用法
 		
 	1、panel(面板)【panel是其他组件的基础】
 		简单用法(html和js方式)

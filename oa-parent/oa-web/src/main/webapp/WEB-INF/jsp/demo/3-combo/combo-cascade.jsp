@@ -12,6 +12,9 @@
 	一级：<input id="province" name="province" /> &nbsp;&nbsp;
 	二级：<input id="city" name="city" />
 	
+	<%--实现解释：
+		实质就是触发onSelect事件，改版下级的URL(一般带有参数)
+  	 --%>
 	<script type="text/javascript">
 		var $provinceCombo = $('#province');
 		var $cityCombo = $('#city');

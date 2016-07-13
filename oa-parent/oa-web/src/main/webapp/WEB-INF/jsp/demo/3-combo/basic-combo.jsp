@@ -9,15 +9,16 @@
   </head>
   
   <body>
-	<%--属性解释
-	valueField : 值名称绑定到该下拉列表框
-  	textField ：字段名称绑定到该下拉列表框
-  	 --%>
-  	 <div style="margin:20px 0;">
+  	<div style="margin:20px 0;">
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="alert($('#language').combobox('getValue'))">GetValue</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#language').combobox('disable')">Disable</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#language').combobox('enable')">Enable</a>
 	</div>
+	
+	<%--属性解释
+	valueField : 值名称绑定到该下拉列表框
+  	textField ：字段名称绑定到该下拉列表框
+  	 --%>
 	<select class="easyui-combobox" id="language" name="language">
 		<option value="ar">Arabic</option>
 		<option value="bg">Bulgarian</option>

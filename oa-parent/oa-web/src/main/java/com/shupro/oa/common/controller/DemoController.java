@@ -24,7 +24,12 @@ public class DemoController {
     
     @RequestMapping(value = "/initLinkButton")
     public String initLinkButton(Model model) {
-    	return "/demo/1-linkbutton/basic-button";
+    	return "/demo/1-button/linkbutton";
+    }
+    
+    @RequestMapping(value = "/initSwitchButton")
+    public String initSwitchButton(Model model) {
+    	return "/demo/1-button/switchbutton";
     }
     
     @RequestMapping(value = "/initPanel")

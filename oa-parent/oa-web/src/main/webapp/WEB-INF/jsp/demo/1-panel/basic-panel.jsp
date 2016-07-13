@@ -28,7 +28,6 @@
   	maximizable : 定义是否显示最大化按钮,默认值是false
   	closable : 定义是否显示关闭按钮,默认值是false
   	tools : 自定义工具菜单
-  	
   	 --%>
 	<div id="p" class="easyui-panel" style="width:700px;height:350px;padding:10px;"
 		data-options="title:'Basic Panel',iconCls:'icon-save',collapsible:true,minimizable:true,maximizable:true,closable:true,

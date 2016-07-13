@@ -12,9 +12,9 @@
 <link id="easyuiTheme" rel="stylesheet" type="text/css" href="${staticPath }/resource/easyui/themes/icon.css" />
 <script type="text/javascript" src="${staticPath }/resource/easyui/jquery.easyui.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="${staticPath }/resource/easyui/easyui-lang-zh_CN.js" charset="utf-8"></script>
-<!-- [扩展JS]
-<script type="text/javascript" src="${staticPath }/extJs.js" charset="utf-8"></script>
- -->
+<!-- [扩展JS] -->
+<script type="text/javascript" src="${staticPath }/resource/easyui/extJsUtil.js" charset="utf-8"></script>
+
 <!-- [扩展样式] -->
 <link rel="stylesheet" type="text/css" href="${staticPath }/css/base.css" />
 <link rel="stylesheet" type="text/css" href="${staticPath }/css/style.css" />

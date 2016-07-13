@@ -56,6 +56,8 @@
 					<p>
 						<img src="${staticPath }/images/user.png" />
 						<a href="#" title="LinkButton（按钮）" fullTitle="demo示例-按钮" url="${path }/initLinkButton">按钮</a>
+						&nbsp;|&nbsp;
+						<a href="#" title="SwitchButton（开关按钮）" fullTitle="demo示例-开关按钮" url="${path }/initSwitchButton">开关按钮</a>
 					</p>
 					<p>
 						<img src="${staticPath }/images/user.png" />

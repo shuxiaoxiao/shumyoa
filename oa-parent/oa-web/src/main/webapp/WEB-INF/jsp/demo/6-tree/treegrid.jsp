@@ -10,6 +10,14 @@
   
   <body>
 	<%--treegrid不适合做搜索查询  --%>
+	<%--属性解释
+	idField : 关键字段来标识树节点
+	treeField : 树节点字段
+	method : 检索数据的HTTP方法。默认为post
+	checkbox : 是否在每一个借点之前都显示复选框,默认为false
+	onlyLeafCheck : 是否只在末级节点之前显示复选框,true是。与checkbox属性配套用
+	dnd : 是否启用拖拽功能,默认为false
+	--%>
 	<table id="sysDeptTreeGrid"></table>
 	
 	<script type="text/javascript">
