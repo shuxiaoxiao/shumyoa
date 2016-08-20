@@ -6,10 +6,11 @@
 		<result column="pid" property="pid"/>
 		<result column="name" property="name"/>
 		<result column="value" property="value"/>
+		<result column="descs" property="descs"/>
 	</resultMap>
        
 	<sql id="Base_Column_List" >
-		 id,pid,name,value
+		 id,pid,name,value,descs
 	</sql>
    
 	<!-- 动态查询条件 -->
@@ -48,13 +49,14 @@
    
 	<!-- 插入记录 -->
 	<insert id="insert" parameterType="com.shupro.oa.admin.model.SysDictionary" >
-	  insert into sys_dictionary(id,pid,name,value)
- values(#{id},#{pid},#{name},#{value})
+	  insert into sys_dictionary(id,pid,name,value,descs)
+ values(#{id},#{pid},#{name},#{value},#{descs})
 	</insert>
 
 	<!-- 根据id，修改记录-->  
 	 <update id="update" parameterType="com.shupro.oa.admin.model.SysDictionary" >
-	  update sys_dictionary set pid=#{pid},name=#{name},value=#{value} where id=#{id}
+	  update sys_dictionary set pid=#{pid},name=#{name},value=#{value},descs=#{descs}
+	  where id=#{id}
 	 </update>
  
 	 <!-- 动态修改记录，只修改只不为空的字段 -->
@@ -70,7 +72,11 @@
 	<if test="value != null  and value != '' ">
 		value=#{value},
 	</if>
-	</trim> where id=#{id}
+	<if test="descs != null  and descs != '' ">
+		descs=#{descs},
+	</if>
+	</trim> 
+	where id=#{id}
 	</update>
 
 	<!-- 删除记录 -->

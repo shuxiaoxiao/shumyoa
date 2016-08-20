@@ -13,7 +13,7 @@
 	二级：<input id="city" name="city" />
 	
 	<%--实现解释：
-		实质就是触发onSelect事件，改版下级的URL(一般带有参数)
+		实质就是触发onSelect事件，使用reload方法 改变下级的URL(一般带有参数)
   	 --%>
 	<script type="text/javascript">
 		var $provinceCombo = $('#province');

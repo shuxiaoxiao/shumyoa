@@ -9,9 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import ${bussPackage}.dao.${className}Mapper;
 import ${bussPackage}.model.${className};
 import ${bussPackage}.service.${className}Service;
-import com.shupro.oa.core.AbstractService;
-import com.shupro.oa.core.BaseMapper;
-import com.shupro.oa.utils.page.PageBean;
+import ${appPackagePrefix}.core.AbstractService;
+import ${appPackagePrefix}.core.BaseMapper;
+import ${appPackagePrefix}.utils.page.PageBean;
 
 @Service
 public class ${className}ServiceImpl extends AbstractService<${className}, Integer> implements ${className}Service {

@@ -43,6 +43,10 @@
 		    			<td><input class="easyui-textbox form-input" name="value" 
 		    				data-options="" maxlength="20" missingMessage="请填写具体值" />
 		    			</td>
+		    			<td class="form-td-left"> 描述:</td>
+		    			<td><input class="easyui-textbox form-input" name="desc" 
+		    				data-options="" maxlength="20" missingMessage="请填写描述" />
+		    			</td>
 		    		</tr>
 		    	</table>
 	        </form>

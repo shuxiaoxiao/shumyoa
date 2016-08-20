@@ -2,13 +2,14 @@ package com.shupro.oa.utils.excel;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
@@ -49,6 +50,26 @@ public class ExcelUtil {
 			return null;
 		}
 	}
+	
+	/**
+	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
+	 * 
+	 * @param filePath
+	 *            需要读取的文件名
+	 * @return
+	 * @throws IOException
+	 */
+	public static List<String[]> read(String fileNameOrPath, InputStream inStream) throws IOException {
+		// 前缀prefix，后缀suffix
+		String suffix = fileNameOrPath.substring(fileNameOrPath.lastIndexOf(".") + 1);
+		if ("xls".equals(suffix)) {
+			return readXls03(inStream);
+		} else if ("xlsx".equals(suffix)) {
+			return readXlsx07(inStream);
+		}else {
+			return null;
+		}
+	}
 
 	/**
 	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
@@ -59,10 +80,23 @@ public class ExcelUtil {
 	 * @throws IOException
 	 */
 	public static List<String[]> readXls03(File file) throws IOException {
-		// 创建一个list 用来存储读取的内容
-		List<String[]> list = new ArrayList<String[]>();
 		// 创建输入流
 		InputStream inStream = new FileInputStream(file);
+
+		return readXls03(inStream);
+	}
+
+	/**
+	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
+	 * 
+	 * @param filePath
+	 *            需要读取的文件名
+	 * @return
+	 * @throws IOException
+	 */
+	public static List<String[]> readXls03(InputStream inStream) throws IOException {
+		// 创建一个list 用来存储读取的内容
+		List<String[]> list = new ArrayList<String[]>();
 		HSSFWorkbook hssfWorkbook = new HSSFWorkbook(inStream);
 
 		// 默认读取第一个sheet
@@ -76,7 +110,7 @@ public class ExcelUtil {
 		// }
 		int rownum = sheet.getLastRowNum();// 总行数
 		// Read the Row
-		for (int i = 0; i < rownum; i++) {
+		for (int i = 1; i <= rownum; i++) {
 			HSSFRow hssfRow = sheet.getRow(i);
 			int colnum = hssfRow.getLastCellNum();// 总列数
 			String[] str = new String[colnum];
@@ -95,16 +129,18 @@ public class ExcelUtil {
 	/**
 	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
 	 * 
-	 * @param filePath
-	 *            需要读取的文件名
+	 * @param file
+	 *            需要读取的文件
 	 * @return
 	 * @throws IOException
 	 */
-	public static List<String[]> readXls03(String filePath) throws IOException {
-		File file = new File(filePath);
-		return readXls03(file);
+	public static List<String[]> readXlsx07(File file) throws IOException {
+		// 创建输入流
+		InputStream inStream = new FileInputStream(file);
+		
+		return readXlsx07(inStream);
 	}
-
+	
 	/**
 	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
 	 * 
@@ -113,13 +149,11 @@ public class ExcelUtil {
 	 * @return
 	 * @throws IOException
 	 */
-	public static List<String[]> readXlsx07(File file) throws IOException {
+	public static List<String[]> readXlsx07(InputStream inStream) throws IOException {
 		// 创建一个list 用来存储读取的内容
 		List<String[]> list = new ArrayList<String[]>();
-		// 创建输入流
-		InputStream inStream = new FileInputStream(file);
 		XSSFWorkbook xssfWorkbook = new XSSFWorkbook(inStream);
-
+		
 		// 默认读取第一个sheet
 		XSSFSheet sheet = xssfWorkbook.getSheetAt(0);
 		// int sheetTotal = xssfWorkbook.getNumberOfSheets();
@@ -131,7 +165,7 @@ public class ExcelUtil {
 		// }
 		int rownum = sheet.getLastRowNum();// 总行数
 		// Read the Row
-		for (int i = 0; i < rownum; i++) {
+		for (int i = 1; i <= rownum; i++) {
 			XSSFRow xssfRow = sheet.getRow(i);
 			int colnum = xssfRow.getLastCellNum();// 总列数
 			String[] str = new String[colnum];
@@ -143,22 +177,22 @@ public class ExcelUtil {
 				list.add(str);
 			}
 		}
-
+		
 		return list;
 	}
 
-	/**
-	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
-	 * 
-	 * @param filePath
-	 *            需要读取的文件名
-	 * @return
-	 * @throws IOException
-	 */
-	public static List<String[]> readXlsx07(String filePath) throws IOException {
-		File file = new File(filePath);
-		return readXlsx07(file);
-	}
+//	/**
+//	 * 读取excel 原理：一行一行读取内容，保存到List<String[]>中
+//	 * 
+//	 * @param filePath
+//	 *            需要读取的文件名
+//	 * @return
+//	 * @throws IOException
+//	 */
+//	public static List<String[]> readXlsx07(String filePath) throws IOException {
+//		File file = new File(filePath);
+//		return readXlsx07(file);
+//	}
 
 	/**
 	 * 获取单元格内容（xls03）
@@ -251,17 +285,37 @@ public class ExcelUtil {
 
 	}
 
+	/**
+	 * 浏览器上导出excel
+	 * @param excelInfo
+	 * @param response
+	 * @throws IOException
+	 */
+	public static void export2Http(ExcelInfo excelInfo, HttpServletResponse response) throws IOException {
+		String fileName = excelInfo.getFileName();
+		// 前缀prefix，后缀suffix
+		String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+		// 输出Excel文件
+		OutputStream output = response.getOutputStream();
+		response.reset();
+		response.setHeader("Content-disposition", "attachment; filename=" + fileName);
+		response.setContentType("application/msexcel");
+		if ("xls".equals(suffix)) {
+			writeXls03(excelInfo, output);
+		} else if ("xlsx".equals(suffix)) {
+			writeXlsx07(excelInfo, output);
+		}
+	}
 	
-	public static void writeXls03(ExcelInfo excelInfo, String filePath) throws IOException {
+	
+	public static void writeXls03(ExcelInfo excelInfo, OutputStream outStream) throws IOException {
 		// 创建HSSFWorkbook对象(excel的文档对象)
 		HSSFWorkbook wb = new HSSFWorkbook();
 		// 建立新的sheet对象（excel的表单）
 		HSSFSheet sheet = wb.createSheet(excelInfo.getSheetName());
 		// 设置缺省列宽8.5,行高为设置的20
 		sheet.setDefaultRowHeightInPoints(20);
-//		//设置指定列的列宽，256 * 50这种写法是因为width参数单位是单个字符的256分之一
-//		sheet.setColumnWidth(0, 256 * 15);// 设置第一列的宽度为15
-//		sheet.setColumnWidth(1, 256 * 10);// 设置第二列的宽度为10
 
 		// 在sheet里创建第一行，参数为行索引(excel的行)，可以是0～65535之间的任何一个
 		HSSFRow header = sheet.createRow(0);
@@ -278,58 +332,20 @@ public class ExcelUtil {
 		if(list != null){
 			int size = list.size();
 			for (int i = 0; i < size; i++) {
+				//sheet.autoSizeColumn(i,true);//中文还是不能实现宽度自适应
 				HSSFRow row = sheet.createRow(i+1);
 				row.setHeightInPoints(20);
 				for (int j = 0, max = fields.length; j < max; j++) {
-					row.createCell(j).setCellValue(String.valueOf(list.get(i).get(fields[j])));
+					String value = String.valueOf(list.get(i).get(fields[j]));
+					int cellLength = value.getBytes().length;
+					sheet.setColumnWidth(j,cellLength*(256+52));//手动设置列宽
+					row.createCell(j).setCellValue(value);
 				}
 			}
 		}
-
-		// 输出Excel文件
-		// OutputStream output=response.getOutputStream();
-		// response.reset();
-		// response.setHeader("Content-disposition",
-		// "attachment; filename=details.xls");
-		// response.setContentType("application/msexcel");
-		OutputStream outStream = new FileOutputStream(filePath);
 		wb.write(outStream);
 		outStream.close();
 
-	}
-	
-	public static HSSFWorkbook writeXls03(ExcelInfo excelInfo) throws IOException {
-		// 创建HSSFWorkbook对象(excel的文档对象)
-		HSSFWorkbook wb = new HSSFWorkbook();
-		// 建立新的sheet对象（excel的表单）
-		HSSFSheet sheet = wb.createSheet(excelInfo.getSheetName());
-		// 设置缺省列宽8.5,行高为设置的20
-		sheet.setDefaultRowHeightInPoints(20);//有值的时候这个属性失效了
-		
-		// 在sheet里创建第一行，参数为行索引(excel的行)，可以是0～65535之间的任何一个
-		HSSFRow header = sheet.createRow(0);
-		header.setHeightInPoints(20);
-		// 创建单元格并设置单元格内容
-		String[] titles = excelInfo.getTitles();
-		for (int i = 0, max = titles.length; i < max; i++) {
-			header.createCell(i).setCellValue(titles[i]);
-		}
-		
-		//具体内容
-		List<Map<String, Object>> list = excelInfo.getList();
-		String[] fields = excelInfo.getFields();
-		if(list != null){
-			int size = list.size();
-			for (int i = 0; i < size; i++) {
-				HSSFRow row = sheet.createRow(i+1);
-				row.setHeightInPoints(20);
-				for (int j = 0, max = fields.length; j < max; j++) {
-					row.createCell(j).setCellValue(String.valueOf(list.get(i).get(fields[j])));
-				}
-			}
-		}
-		
-		return wb;
 	}
 	
 	/**
@@ -337,54 +353,43 @@ public class ExcelUtil {
 	 * @param filePath
 	 * @throws IOException
 	 */
-	public static void writeXlsx07(String filePath) throws IOException {
+	public static void writeXlsx07(ExcelInfo excelInfo, OutputStream outStream) throws IOException {
 		// 创建HSSFWorkbook对象(excel的文档对象)
 		XSSFWorkbook wb = new XSSFWorkbook();
 		// 建立新的sheet对象（excel的表单）
-		XSSFSheet sheet = wb.createSheet("成绩表07");
+		XSSFSheet sheet = wb.createSheet(excelInfo.getSheetName());
 		// 设置缺省列宽8.5,行高为设置的30
-		sheet.setDefaultRowHeightInPoints(30);
-
-		// 设置指定列的列宽，256 * 50这种写法是因为width参数单位是单个字符的256分之一
-		sheet.setColumnWidth(0, 256 * 15);// 设置第一列的宽度为15
-		sheet.setColumnWidth(1, 256 * 10);// 设置第一列的宽度为10
-
+		sheet.setDefaultRowHeightInPoints(20);
 		// 合并单元格CellRangeAddress构造参数依次表示起始行，截至行，起始列， 截至列
-		sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 3));
+//		sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 3));
 
 		// 在sheet里创建第一行，参数为行索引(excel的行)，可以是0～65535之间的任何一个
-		XSSFRow row1 = sheet.createRow(0);
-		// row1.setHeightInPoints(50);// 设定行的高度,会使设置的默认行高失效（其他行受到了影响，其他行也设置该属性)
-
-		// 创建单元格（excel的单元格，参数为列索引，可以是0～255之间的任何一个
-		XSSFCell cell = row1.createCell(0);
-		// 设置单元格内容
-		cell.setCellValue("学员考试成绩一览表");
-
-		// 在sheet里创建第二行
-		XSSFRow row2 = sheet.createRow(1);
+		XSSFRow header = sheet.createRow(0);
+		header.setHeightInPoints(20);;// 设定行的高度,会使设置的默认行高失效（其他行受到了影响，其他行也设置该属性)
 		// 创建单元格并设置单元格内容
-		row2.createCell(0).setCellValue("姓名");
-		row2.createCell(1).setCellValue("班级");
-		row2.createCell(2).setCellValue("笔试成绩");
-		row2.createCell(3).setCellValue("机试成绩");
-
-		// row2.setRowStyle(setCellStyle(wb));
-
-		// 在sheet里创建第三行
-		XSSFRow row3 = sheet.createRow(2);
-		row3.createCell(0).setCellValue("李明");
-		row3.createCell(1).setCellValue("As178");
-		row3.createCell(2).setCellValue(87);
-		row3.createCell(3).setCellValue(78);
-
-		// 输出Excel文件
-		// OutputStream output=response.getOutputStream();
-		// response.reset();
-		// response.setHeader("Content-disposition",
-		// "attachment; filename=details.xls");
-		// response.setContentType("application/msexcel");
-		OutputStream outStream = new FileOutputStream(filePath);
+		String[] titles = excelInfo.getTitles();
+		for (int i = 0, max = titles.length; i < max; i++) {
+			header.createCell(i).setCellValue(titles[i]);
+		}
+		
+		//具体内容
+		List<Map<String, Object>> list = excelInfo.getList();
+		String[] fields = excelInfo.getFields();
+		if(list != null){
+			int size = list.size();
+			for (int i = 0; i < size; i++) {
+				//sheet.autoSizeColumn(i,true);//中文还是不能实现宽度自适应
+				XSSFRow row = sheet.createRow(i+1);
+				row.setHeightInPoints(20);
+				for (int j = 0, max = fields.length; j < max; j++) {
+					String value = String.valueOf(list.get(i).get(fields[j]));
+					int cellLength = value.getBytes().length;
+					sheet.setColumnWidth(j,cellLength*(256+52));//手动设置列宽
+					row.createCell(j).setCellValue(value);
+				}
+			}
+		}
+		
 		wb.write(outStream);
 		outStream.close();
 

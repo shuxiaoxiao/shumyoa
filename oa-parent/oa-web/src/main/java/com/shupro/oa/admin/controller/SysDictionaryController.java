@@ -64,7 +64,7 @@ public class SysDictionaryController {
 	 */
 	@RequestMapping("/select2combo/{pid}")
 	@ResponseBody
-	public String select2combo(HttpServletRequest request,@PathVariable String pid) {
+	public String select2combo(HttpServletRequest request,@PathVariable int pid) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		//查询域的查询条件
 //		map.put("pid", request.getParameter("pid"));

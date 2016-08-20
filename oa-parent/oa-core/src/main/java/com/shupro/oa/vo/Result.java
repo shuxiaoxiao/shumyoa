@@ -9,39 +9,59 @@ import java.io.Serializable;
  */
 public class Result implements Serializable {
 
-    public static final int SUCCESS = 1;
-    public static final int FAILURE = -1;
+	private static final long serialVersionUID = 5576237395711742681L;
 
-    private static final long serialVersionUID = 5576237395711742681L;
+	private boolean success = false;
+	private int code;
+	private Object data;
+	private String message;
 
-    private boolean success = false;
+	public Result(int code, Object data) {
+		this.code = code;
+		this.data = data;
+	}
 
-    private String msg = "";
+	public Result(int code, String message) {
+		this.code = code;
+		this.message = message;
+	}
 
-    private Object obj = null;
+	public Result(int code, Object data, String message) {
+		this.code = code;
+		this.data = data;
+		this.message = message;
+	}
 
-    public boolean isSuccess() {
-        return success;
-    }
+	public int getCode() {
+		return code;
+	}
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
+	public void setCode(int code) {
+		this.code = code;
+	}
 
-    public String getMsg() {
-        return msg;
-    }
+	public Object getData() {
+		return data;
+	}
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+	public void setData(Object data) {
+		this.data = data;
+	}
 
-    public Object getObj() {
-        return obj;
-    }
+	public String getMessage() {
+		return message;
+	}
 
-    public void setObj(Object obj) {
-        this.obj = obj;
-    }
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public boolean isSuccess() {
+		return success;
+	}
+
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
 
 }

@@ -10,17 +10,31 @@ import java.util.Map;
  *
  */
 public class ExcelInfo {
+	private String fileName;
 	private String sheetName;
 	private String[] titles;
 	private String[] fields;
 	private List<Map<String, Object>> list;
 
-	public ExcelInfo(String sheetName, String[] titles, String[] fields, List<Map<String, Object>> list) {
+	public ExcelInfo(){}
+	
+	public ExcelInfo(String fileName, String sheetName, String[] titles, String[] fields, List<Map<String, Object>> list) {
+		this.fileName = fileName;
 		this.sheetName = sheetName;
 		this.titles = titles;
 		this.fields = fields;
 		this.list = list;
 	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
 
 	public String getSheetName() {
 		return sheetName;

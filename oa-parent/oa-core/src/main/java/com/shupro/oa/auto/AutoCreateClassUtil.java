@@ -43,6 +43,7 @@ public class AutoCreateClassUtil {
 		root.put("lowerName", lowerName);
 		root.put("tableName", tableName);
 		root.put("bussPackage", autoModel.getBussPackage());
+		root.put("appPackagePrefix", autoModel.getAppPackagePrefix());
 		try {
 			root.put("feilds", createBean.getBeanFeilds(tableName));
 			

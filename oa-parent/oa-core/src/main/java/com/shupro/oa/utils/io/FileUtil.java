@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.shupro.oa.utils.lang.StringUtil;
+
 /**
  * 文件上传下载工具类
  * 
@@ -41,6 +43,7 @@ public class FileUtil {
 		// 这里我用到了jar包
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
 				request.getSession().getServletContext());
+		String newFileName = "";
 		if (multipartResolver.isMultipart(request)) {
 			MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
 
@@ -49,21 +52,56 @@ public class FileUtil {
 				MultipartFile file = multiRequest.getFile((String) iter.next());
 				if (file != null) {
 					String fileName = file.getOriginalFilename();
-					String path1 = Thread.currentThread().getContextClassLoader().getResource("").getPath() + "download"
-							+ File.separator;
-
-					// 下面的加的日期是为了防止上传的名字一样
-					String path = path1 + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + fileName;
-					File localFile = new File(path);
-					file.transferTo(localFile);
+					String path = request.getSession().getServletContext().getRealPath("upload");
+					newFileName = StringUtil.getNewFilename(fileName);
+					File targetFile = new File(path, newFileName);
+					if (!targetFile.exists()) {
+						targetFile.mkdirs();
+					}
+					file.transferTo(targetFile);
 				}
 			}
 		}
-		return "uploadSuccess";
+		return newFileName;
+	}
+	
+	/**
+	 * 上传
+	 * @param request
+	 * @param response
+	 * @param savePath		本地保存文件夹位置
+	 * @param namePrefix	文件名前缀
+	 * @return
+	 * @throws IOException
+	 */
+	public static String upload(HttpServletRequest request, HttpServletResponse response, String savePath, String namePrefix) throws IOException {
+		// 这里我用到了jar包
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+				request.getSession().getServletContext());
+		String newFileName = "";
+		if (multipartResolver.isMultipart(request)) {
+			MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
+			
+			Iterator<String> iter = multiRequest.getFileNames();
+			while (iter.hasNext()) {
+				MultipartFile file = multiRequest.getFile((String) iter.next());
+				if (file != null) {
+					String fileName = file.getOriginalFilename();
+					String path = request.getSession().getServletContext().getRealPath(savePath);
+					newFileName = namePrefix + StringUtil.getNewFilename(fileName);
+					File targetFile = new File(path, newFileName);
+					if (!targetFile.exists()) {
+						targetFile.mkdirs();
+					}
+					file.transferTo(targetFile);
+				}
+			}
+		}
+		return newFileName;
 	}
 
 	/**
-	 * // * 文件下载 (文件存放src/download文件夹下)
+	 * 文件下载 
 	 * 
 	 * @param fileName
 	 *            需下载文件名
@@ -72,14 +110,15 @@ public class FileUtil {
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
-	public static String download(String fileName, HttpServletRequest request, HttpServletResponse response)
+	public static String download(String savePath, String fileName, HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		response.setCharacterEncoding("utf-8");
-		response.setContentType("multipart/form-data");
-		response.setHeader("Content-Disposition", "attachment;" + fileName);
+		//response.setContentType(request.getSession().getServletContext().getMimeType(fileName));
+		response.setHeader("Content-Disposition","attachment;filename="+fileName);
 //		response.setHeader("Content-Disposition", "attachment;" + encodeFileName(request, fileName));
 		try {
-			String path = Thread.currentThread().getContextClassLoader().getResource("").getPath() + "download";// 这个download目录为啥建立在classes下的
+//			String path = Thread.currentThread().getContextClassLoader().getResource("").getPath() + savePath;
+			String path = request.getSession().getServletContext().getRealPath(savePath);
 			InputStream inputStream = new FileInputStream(
 					new File(path.replace("%20", " ") + File.separator + fileName));
 
@@ -143,4 +182,5 @@ public class FileUtil {
 //		return rtn;
 //	}
 
+}
 }

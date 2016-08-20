@@ -107,6 +107,16 @@ public class DemoController {
     	return "/demo/3-combo/combotree";
     }
     
+    @RequestMapping(value = "/initGrid")
+    public String initGrid(Model model) {
+    	return "/demo/5-grid/basic-grid";
+    }
+    
+    @RequestMapping(value = "/initGrid-js")
+    public String initGrid2(Model model) {
+    	return "/demo/5-grid/grid-js";
+    }
+    
     @RequestMapping(value = "/initTree")
     public String initTree(Model model) {
     	return "/demo/6-tree/tree";

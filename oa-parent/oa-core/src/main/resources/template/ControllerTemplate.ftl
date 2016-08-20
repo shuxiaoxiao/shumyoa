@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ${bussPackage}.model.${className};
 import ${bussPackage}.service.${className}Service;
-import com.shupro.oa.utils.json.JsonUtil;
-import com.shupro.oa.utils.page.PageBean;
+import ${appPackagePrefix}.utils.json.JsonUtil;
+import ${appPackagePrefix}.utils.page.PageBean;
 
 @Controller
 @RequestMapping("/${lowerName}")

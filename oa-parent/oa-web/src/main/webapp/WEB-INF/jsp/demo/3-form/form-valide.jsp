@@ -26,7 +26,10 @@
 		  		<tr>
 		  			<td>Password:</td>
 		  			<td><input class="easyui-textbox" type="password" id="password" name="password" 
-		  				data-options="required:true, missingMessage:'不能为空', validType:'length[5,5]', invalidMessage:'请输入5个字符！' " />
+		  				data-options="required:true, missingMessage:'不能为空', validType:'eqLength[5]' " />
+		  				<%--  判断定长方式一：使用自带length
+		  				data-options="required:true, missingMessage:'不能为空', validType:'length[5,5]', invalidMessage:'请输入5个字符！' " /> 
+		  				--%>
 		  			</td>
 		  		</tr>
 		  		<tr>
@@ -66,6 +69,7 @@
 	  	
 	  	<script type="text/javascript">
 			$(function(){
+				//这些表单检验扩展一般放入公共js文件 [使用string.trim()是因为拓展js里面重写String.prototype.trim ]
 				$.extend($.fn.validatebox.defaults.rules, {
 				    //二次密码是否一致
 					eqPwd : {
@@ -91,16 +95,23 @@
 					//  指定字符最小长度
 		            minLength: {
 		                validator: function (value, param) { 
-		                	return $.string.trim(value).length >= param[0]; 
+		                	return value.trim().length >= param[0]; 
 		                },
 		                message: "最少输入 {0} 个字符."
 		            },
 		            //  指定字符最大长度
 		            maxLength: {
 		                validator: function (value, param) { 
-		                	return $.string.trim(value).length <= param[0]; 
+		                	return value.trim().length <= param[0]; 
 		                },
 		                message: "最多输入 {0} 个字符."
+		            },
+		            //  指定字符长度
+		            eqLength: {
+		                validator: function (value, param) { 
+		                	return value.trim().length == param[0]; 
+		                },
+		                message: "只能输入 {0} 个字符."
 		            },
 				    /**
 				     * 手机号码: 

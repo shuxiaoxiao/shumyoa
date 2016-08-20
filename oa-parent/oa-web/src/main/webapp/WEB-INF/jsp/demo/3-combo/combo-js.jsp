@@ -17,8 +17,12 @@
 	<%--属性解释
 	valueField : 值名称绑定到该下拉列表框
   	textField ：字段名称绑定到该下拉列表框
+  	formatter : 渲染行
   	 --%>
-	<input id="language" name="language" />
+  	<div style="margin:20px 0;">
+  		<!-- 火狐显示有兼容问题 -->
+		<input id="language" name="language" />
+  	</div>
 	
 	<script type="text/javascript">
 		//select2combo
@@ -27,7 +31,12 @@
 			$combobox.combobox({
 				url : '${path}/sysDictionary/select2combo/1',
 				valueField: 'value',
-		        textField: 'name'
+		        textField: 'name',
+		        formatter: function(row){
+		        	var str = '<span style="font-weight:bold">' + row.name + '</span><br/>' +
+					'<span style="color:#888">' + row.descs + '</span>';
+					return str;
+		        }
 			});
 			
 		});

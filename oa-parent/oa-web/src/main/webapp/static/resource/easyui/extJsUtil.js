@@ -239,7 +239,7 @@ $.extend($.fn.treegrid.methods, gridTooltipOptions);
  * 扩展validatebox，添加验证两次密码功能
  */
 $.extend($.fn.validatebox.defaults.rules, {
-    //二次密码是否一致
+	//二次密码是否一致
 	eqPwd : {
         validator : function(value, param) {
             return value == $(param[0]).val();
@@ -260,6 +260,27 @@ $.extend($.fn.validatebox.defaults.rules, {
 	    },
 	    message: '只允许汉字、英文字母或数字。'
 	},
+	//  指定字符最小长度
+    minLength: {
+        validator: function (value, param) { 
+        	return value.trim().length >= param[0]; 
+        },
+        message: "最少输入 {0} 个字符."
+    },
+    //  指定字符最大长度
+    maxLength: {
+        validator: function (value, param) { 
+        	return value.trim().length <= param[0]; 
+        },
+        message: "最多输入 {0} 个字符."
+    },
+    //  指定字符长度
+    eqLength: {
+        validator: function (value, param) { 
+        	return value.trim().length == param[0]; 
+        },
+        message: "只能输入 {0} 个字符."
+    },
     /**
      * 手机号码: 
      * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 17[6, 7, 8], 18[0-9], 170[0-9]
@@ -269,7 +290,7 @@ $.extend($.fn.validatebox.defaults.rules, {
      */
 	mobile: {
 	    validator: function (value, param) { 
-	    	return /^1(3[0-9]|4[57]|5[0-35-9]|7[6-8]|8[0-9]|70)\\d{8}$/.test(value);
+	    	return /^1(3[0-9]|4[57]|5[0-35-9]|7[06-8]|8[0-9])\\d{8}$/.test(value);
 	    },
 	    message: "不符合手机号码(中国)格式."
 	}
