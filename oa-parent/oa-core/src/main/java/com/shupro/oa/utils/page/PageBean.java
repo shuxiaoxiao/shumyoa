@@ -12,7 +12,7 @@ import java.util.List;
 public class PageBean<T> {
 	private int total;
 	private List<T> rows;
-	private int pageSize=15;//每页显示多少行
+	private int pageSize=10;//每页显示多少行
 	private int pageNo=1;//第几页
 	
 	public PageBean() {

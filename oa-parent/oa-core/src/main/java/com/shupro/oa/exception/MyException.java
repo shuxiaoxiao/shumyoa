@@ -1,14 +1,11 @@
 package com.shupro.oa.exception;
 
-import org.junit.Test;
-
 public class MyException {
 
 	/**
 	 * try-catch-finally 
 	 * 
 	 */
-	@Test
 	public void test1(){
 		try {
 			int a = do1(-1);

@@ -7,8 +7,6 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
-	<!-- <mvc:annotation-driven/> -->
-	
 	<!--要调用的工作 -->
 	<bean id="myJob" class="com.shupro.oa.quartz.MyJob"></bean>
 	
@@ -34,7 +32,7 @@
 		</property>
 	</bean>
 	<!-- 暂时关闭定时任务 -->
-	<!-- 调度程序 
+	<!-- 调度程序  -->
 	<bean id="myScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <list>
@@ -43,8 +41,7 @@
         </property>
         <property name="autoStartup" value="true"></property>
     </bean>
-    -->
-    
+   
 	<!-- 调度程序-多个
 	<bean id="myScheduler2" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">

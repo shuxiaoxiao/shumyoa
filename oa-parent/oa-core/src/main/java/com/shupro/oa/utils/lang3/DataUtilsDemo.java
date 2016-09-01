@@ -5,7 +5,6 @@ import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.junit.Test;
 
 /**
  * apache.commons.lang3.time包中的DateUtils类
@@ -15,7 +14,6 @@ import org.junit.Test;
  */
 public class DataUtilsDemo {
 
-	@Test
 	public void parseDate() throws ParseException {
 		//字符串转成date类型
 		Date date = DateUtils.parseDate("2015/01/01 11:22:33", "yyyy/MM/dd HH:mm:ss");//true   

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTime.Property;
-import org.junit.Test;
 
 /**
  * DateTime类似jdk的String（不可变）<br>
@@ -19,7 +18,6 @@ import org.junit.Test;
  */
 public class DateTimeDemo {
 
-	@Test
 	public void init() {
 		//构造当前时间
 		DateTime dt1 =new DateTime();
@@ -45,7 +43,6 @@ public class DateTimeDemo {
 		
 	}
 	
-	@Test
 	public void test1() {
 //		DateTime dt1 =new DateTime();
 //		dt1.plusDays(30);

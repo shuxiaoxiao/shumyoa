@@ -57,7 +57,7 @@ public class SysLogAop {
             // 获取请求地址  
             String requestPath = request.getRequestURI();
             // 获取输入参数
-            Map<String, String> inputParamMap = MyBeanUtil.getParameterMap(request); 
+            Map<String, Object> inputParamMap = MyBeanUtil.getParameterMap(request); 
 //            //获取输入参数(方式二)
 //            Map<String, String[]> inputParamMap = request.getParameterMap(); 
             strMessage = String.format("[类名]:%s,[方法]:%s,[请求路径]:%s,[参数]:%s", 

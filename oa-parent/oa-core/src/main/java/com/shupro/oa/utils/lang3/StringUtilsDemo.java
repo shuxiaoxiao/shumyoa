@@ -1,7 +1,6 @@
 package com.shupro.oa.utils.lang3;
 
 import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
 
 /**
  * apache.commons.lang3包中的StringUtils类
@@ -12,14 +11,12 @@ import org.junit.Test;
 public class StringUtilsDemo {
 
 	/**判断是否为空*/
-	@Test
 	public void isEmpty() {
 		System.out.println(StringUtils.isEmpty(null));//true  
 		System.out.println(StringUtils.isEmpty(""));//true  
 		System.out.println(StringUtils.isEmpty(" "));//false  
 	}
 	
-	@Test
 	public void isBlank() {
 		System.out.println(StringUtils.isBlank(null));//true  
 		System.out.println(StringUtils.isBlank(""));//true  
@@ -27,7 +24,6 @@ public class StringUtilsDemo {
 	}
 	
 	/**去空格*/
-	@Test
 	public void trim() {
 		//tirm,去除前后空格
 		System.out.println(StringUtils.trim(null)); //null  
@@ -42,7 +38,5 @@ public class StringUtilsDemo {
 		System.out.println(StringUtils.trimToEmpty(null));
 	
 	}
-	
-	
 	
 }

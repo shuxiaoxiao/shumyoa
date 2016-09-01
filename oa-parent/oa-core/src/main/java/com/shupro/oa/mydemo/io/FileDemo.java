@@ -1,17 +1,6 @@
 package com.shupro.oa.mydemo.io;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-
-import org.junit.Test;
 
 /**
  * 
@@ -22,7 +11,6 @@ import org.junit.Test;
 
 public class FileDemo {
 	
-	@Test
 	public void init() {
 		File file = new File("D:\\temp\\keytoolcmd.txt");		// 根据指定的路径创建一个File对象
 		//mkdir() 创建文件夹,只能一层层创建

@@ -2,7 +2,6 @@ package com.shupro.oa.utils.md5;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.junit.Test;
 
 /**
  * MD5全名Message-Digest Algorithm 5（信息-摘要算法）是一种不可逆的加密算法。
@@ -11,7 +10,6 @@ import org.junit.Test;
  */
 public class Md5Test {
 
-	@Test
 	public void test1() {
 		String str = "test";
 		String md5 = DigestUtils.md5Hex(str);
@@ -29,7 +27,6 @@ public class Md5Test {
 //		Base64.
 	}
 	
-	@Test
 	public void test2() {
 //		String str = "test";
 //		String md5 = DigestUtils.md5Hex(str);

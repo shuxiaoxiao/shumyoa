@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
 
 /**
  * org.apache.commons.io 包中的FileUtils类
@@ -15,7 +14,6 @@ import org.junit.Test;
 public class FileUtilDemo {
 	// http://jackyrong.iteye.com/blog/2153812
 
-	@Test
 	public void readAndWrite() throws IOException {
 
 		String fileName = "D:/testexl/test2.txt";

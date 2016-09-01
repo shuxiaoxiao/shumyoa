@@ -2,7 +2,6 @@ package com.shupro.oa.utils.lang3;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
-import org.junit.Test;
 
 /**
  * apache.commons.lang3.text包中的WordUtils类 
@@ -13,7 +12,6 @@ import org.junit.Test;
 public class WordUtilsDemo {
 
 	/**首字母大写*/
-	@Test
 	public void capitalize() {
 		String str1 = "wOrD";
 		System.out.println(WordUtils.capitalize(str1)); // 首字母大写 WOrD
@@ -30,7 +28,6 @@ public class WordUtilsDemo {
 	}
 	
 	/**获取首字母*/
-	@Test
 	public void initials() {
 		String str1 = "wOrD";
 		System.out.println(WordUtils.initials(str1)); // 获取首字母 w
@@ -44,7 +41,6 @@ public class WordUtilsDemo {
 	}
 	
 	/**其他功能*/
-	@Test
 	public void other() {
 		String str1 = "wOrD";
 		System.out.println(WordUtils.swapCase(str1)); // 大小写逆转 WoRd

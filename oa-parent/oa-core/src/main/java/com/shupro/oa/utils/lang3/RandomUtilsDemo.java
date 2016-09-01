@@ -1,7 +1,6 @@
 package com.shupro.oa.utils.lang3;
 
 import org.apache.commons.lang3.RandomUtils;
-import org.junit.Test;
 
 /**
  * apache.commons.lang3包中的RandomUtils类
@@ -11,7 +10,6 @@ import org.junit.Test;
  */
 public class RandomUtilsDemo {
 
-	@Test
 	public void nextInt() {
 		for (int i = 0; i < 10000; i++) {
 			// nextInt(int startInclusive, int endExclusive)  

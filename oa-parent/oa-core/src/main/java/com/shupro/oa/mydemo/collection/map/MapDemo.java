@@ -2,14 +2,10 @@ package com.shupro.oa.mydemo.collection.map;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * Map<key, value> 的特点：
@@ -26,7 +22,6 @@ public class MapDemo {
 	 * 如果键是第一次存储，就直接存储元素，返回null
 	 * 如果键不是第一次存在，就用值把以前的值替换掉，返回以前的值
 	 */
-	@Before
 	public void init() {
 		map.put("k1", "aaa");
 		map.put("k2", "bbb");
@@ -39,7 +34,6 @@ public class MapDemo {
 	}
 	
 	//方式1：键找值
-	@Test
 	public void show1() {
 		//键 对象
 		Set<String> set = map.keySet();
@@ -50,7 +44,6 @@ public class MapDemo {
 	}
 	
 	//方式2：键值对对象找键和值
-	@Test
 	public void show2() {
 		//键值对 对象
 		Set<Map.Entry<String,String>> set2 = map.entrySet();
@@ -66,7 +59,6 @@ public class MapDemo {
 	 * 利用Arrays.sort排序(推荐)
 	 * Collections.sort(list),不能对进行排序set(通过循环将key放入list，然后排序)
 	 */
-	@Test
 	public void getMinKey() {
 		System.out.println(map);
 		Set<String> set = map.keySet();
@@ -82,7 +74,6 @@ public class MapDemo {
 	 * 利用Arrays.sort排序(推荐)
 	 * Collections.sort(list),不能对进行排序set(通过循环将key放入list，然后排序)
 	 */
-	@Test
 	public void getMinValue() {
 		System.out.println(map);
 		Collection<String> valcoll = map.values();
@@ -97,7 +88,6 @@ public class MapDemo {
 	 * map迭代，并条件删除是注意异常,
 	 * java.util.ConcurrentModificationException  at java.util.HashMap$HashIterator
 	 */
-	@Test
 	public void remove() {
 		System.out.println(map);
 		//map迭代删除
@@ -121,7 +111,6 @@ public class MapDemo {
 	}
 	
 	/**移除空值所在的key*/
-	@Test
 	public void remove2() {
 		System.out.println(map);
 		map.remove("k6");

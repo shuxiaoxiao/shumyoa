@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
 /**
  * List的特有功能
  * @author Administrator
@@ -18,7 +15,6 @@ public class ListDemo {
 	/**
 	 * 普通添加 和 在指定位置添加元素
 	 */
-	@Before
 	public void init() {
 		list.add("111");
 		list.add("222");
@@ -34,7 +30,6 @@ public class ListDemo {
 	 * 元素展示（方法一，推荐使用）
 	 * get(int index)：获取指定位置的元素
 	 */
-	@Test
 	public void show1() {
 		for (int i = 0,max =list.size(); i < max; i++) {
 			//Object get(int index)：获取指定位置的元素
@@ -44,7 +39,6 @@ public class ListDemo {
 	/**
 	 * 元素展示（方法二）
 	 */
-	@Test
 	public void show2() {
 		Iterator<String> it = list.iterator();
 		while (it.hasNext()) {

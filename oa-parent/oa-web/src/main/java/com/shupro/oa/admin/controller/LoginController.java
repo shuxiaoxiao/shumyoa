@@ -57,7 +57,7 @@ public class LoginController {
     		
     		//成功显示首页
     		result.setSuccess(true);
-    		result.setMsg("/home");
+    		result.setMessage("/home");
 		}
     	return result;
     }
