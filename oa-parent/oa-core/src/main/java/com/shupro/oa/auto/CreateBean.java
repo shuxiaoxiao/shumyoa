@@ -26,7 +26,8 @@ public class CreateBean {
 	private String username;
 	private String password;
 	
-	static String rt = "\r\t";
+	/*换行+空位符*/
+	static String rt = "\r\n\t";
 	String SQLTables = "show tables";
 	private String method;
 	private String argv;
@@ -131,12 +132,12 @@ public class CreateBean {
 			String comment = d.getColumnComment();
 			
 			String maxChar = name.substring(0, 1).toUpperCase();
-			str.append("\r\t").append("private ").append(type + " ").append(name).append(";//   ").append(comment);
+			str.append(rt).append("private ").append(type + " ").append(name).append(";// ").append(comment);
 			String method = maxChar + name.substring(1, name.length());
-			getset.append("\r\t").append("public ").append(type + " ").append("get" + method + "() {\r\t");
-			getset.append("    return this.").append(name).append(";\r\t}");
-			getset.append("\r\t").append("public void ").append("set" + method + "(" + type + " " + name + ") {\r\t");
-			getset.append("    this." + name + "=").append(name).append(";\r\t}");
+			getset.append(rt).append("public ").append(type + " ").append("get" + method + "() {\r\n\t");
+			getset.append("    return this.").append(name).append(";\r\n\t}");
+			getset.append(rt).append("public void ").append("set" + method + "(" + type + " " + name + ") {\r\n\t");
+			getset.append("    this." + name + "=").append(name).append(";\r\n\t}");
 		}
 		this.argv = str.toString();
 		this.method = getset.toString();
@@ -247,32 +248,32 @@ public class CreateBean {
 			packageName = "";
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("package ").append(packageName).append(";\r");
-		sb.append("\r");
+		sb.append("package ").append(packageName).append(";\r\n");
+		sb.append("\r\n");
 		for (int i = 0; i < importName.length; ++i)
-			sb.append("import ").append(importName[i]).append(";\r");
+			sb.append("import ").append(importName[i]).append(";\r\n");
 		
-		sb.append("\r");
-		sb.append("/**\r *  entity. @author wolf Date:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r */");
-		sb.append("\r");
-		sb.append("\rpublic class ").append(className);
+		sb.append("\r\n");
+		sb.append("/**\r\n *  entity. @author wolf Date:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r\n */");
+		sb.append("\r\n");
+		sb.append("\r\npublic class ").append(className);
 		if (extendsClassName != null)
 			sb.append(" extends ").append(extendsClassName);
 		
 		if (type == 1)
-			sb.append(" ").append("implements java.io.Serializable {\r");
+			sb.append(" ").append("implements java.io.Serializable {\r\n");
 		else
-			sb.append(" {\r");
+			sb.append(" {\r\n");
 		
-		sb.append("\r\t");
-		sb.append("private static final long serialVersionUID = 1L;\r\t");
+		sb.append(rt);
+		sb.append("private static final long serialVersionUID = 1L;\r\n\t");
 		String temp = className.substring(0, 1).toLowerCase();
 		temp = temp + className.substring(1, className.length());
 		if (type == 1)
 			sb.append("private " + className + " " + temp + "; // entity ");
 		
 		sb.append(content);
-		sb.append("\r}");
+		sb.append("\r\n}");
 		System.out.println(sb.toString());
 		createFile(createPath, "", sb.toString());
 	}
@@ -312,8 +313,8 @@ public class CreateBean {
 	public String getDeleteSql(String tableName, String[] columnsList) throws SQLException {
 	
 		StringBuffer sb = new StringBuffer();
-		sb.append("delete ");
-		sb.append("\t from ").append(tableName).append(" where ");
+		sb.append("delete from ");
+		sb.append(tableName).append(" where ");
 		sb.append(columnsList[0]).append(" = #{").append(columnsList[0]).append("}");
 		return sb.toString();
 	}
@@ -360,7 +361,7 @@ public class CreateBean {
 				sb.append(",");
 		}
 		
-		String update = "update " + tableName + " set " + sb.toString() + " where " + columnsList[0] + "=#{" + columnsList[0] + "}";
+		String update = "update " + tableName + " set " + sb.toString() + "\n where " + columnsList[0] + "=#{" + columnsList[0] + "}";
 		return update;
 	}
 	
@@ -382,7 +383,7 @@ public class CreateBean {
 			sb.append("\t</if>\n");
 		}
 		sb.append("\t</trim>");
-		String update = "update " + tableName + " set \n" + sb.toString() + " where " + cd.getColumnName() + "=#{" + cd.getColumnName()
+		String update = "update " + tableName + " set \n" + sb.toString() + "\n  where " + cd.getColumnName() + "=#{" + cd.getColumnName()
 				+ "}";
 		return update;
 	}

@@ -20,9 +20,11 @@ public class StringUtil {
 	public static String getUUId32() {
 		// java.util.UUID 是jdk 提供的类
 		String str = java.util.UUID.randomUUID().toString();
-		String uuids = str.substring(0, 8) + str.substring(9, 13)
-				+ str.substring(14, 18) + str.substring(19, 23)
-				+ str.substring(24);
+		// String uuids = str.substring(0, 8) + str.substring(9, 13)
+		// + str.substring(14, 18) + str.substring(19, 23)
+		// + str.substring(24);
+		// 方法二：与截取字符串的速度差不多
+		String uuids = str.replace("-", "");
 		return uuids;
 	}
 	

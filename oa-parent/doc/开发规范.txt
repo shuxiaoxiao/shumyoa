@@ -1,20 +1,23 @@
 
 //不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。
+0、开发约定
+	1)state、isenable 设置为char(1) 0表示不可以（删除） 1可用。特殊情况另算，如节点状态
+	2)树形结构 pid=0 为根节点
+
 	
 1、model层
 	1)尽量建 pojo 对象
 
 2、dao层
 	1) xml文件规定如下，方便 dao层实现
-		由于 "节点id" 不能重复, namespace 相当于包名 ，不会影响 id的唯一性，
-		节点的 id 属性 命名规则 ：  类名.接口的方法名,如  id="Employee.save"
+		
 	2)
 
 3、service层
 	1)
 	2)	
 	
-4、action层
+5、controller层（action层）
 	1)
 	2)	
 	

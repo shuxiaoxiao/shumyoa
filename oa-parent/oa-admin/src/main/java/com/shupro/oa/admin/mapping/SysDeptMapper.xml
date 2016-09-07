@@ -11,10 +11,11 @@
 		<result column="description" property="description"/>
 		<result column="sotid" property="sotid"/>
 		<result column="state" property="state"/>
+		<result column="isenable" property="isenable"/>
 	</resultMap>
        
 	<sql id="Base_Column_List" >
-		 id,deptid,name,pid,levels,createtime,description,sotid,state
+		 id,deptid,name,pid,levels,createtime,description,sotid,state,isenable
 	</sql>
    
 	<!-- 动态查询条件 -->
@@ -72,13 +73,14 @@
    
 	<!-- 插入记录 -->
 	<insert id="insert" parameterType="com.shupro.oa.admin.model.SysDept" >
-	  insert into sys_dept(id,deptid,name,pid,levels,createtime,description,sotid)
- values(#{id},#{deptid},#{name},#{pid},#{levels},#{createtime},#{description},#{sotid})
+	  insert into sys_dept(id,deptid,name,pid,levels,createtime,description,sotid,isenable)
+ values(#{id},#{deptid},#{name},#{pid},#{levels},#{createtime},#{description},#{sotid},#{isenable})
 	</insert>
 
 	<!-- 根据id，修改记录-->  
 	 <update id="update" parameterType="com.shupro.oa.admin.model.SysDept" >
-	  update sys_dept set deptid=#{deptid},name=#{name},pid=#{pid},levels=#{levels},description=#{description},sotid=#{sotid} where id=#{id}
+	  update sys_dept set deptid=#{deptid},name=#{name},pid=#{pid},levels=#{levels},description=#{description},sotid=#{sotid},isenable=#{isenable} 
+	  where id=#{id}
 	 </update>
  
 	 <!-- 动态修改记录，只修改只不为空的字段 -->
@@ -109,7 +111,8 @@
 	<if test="isenable != null  ">
 		isenable=#{isenable},
 	</if>
-	</trim> where id=#{id}
+	</trim> 
+	where id=#{id}
 	</update>
 
 	<!-- 删除记录 (部门数据最好是逻辑删除)

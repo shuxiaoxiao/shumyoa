@@ -15,9 +15,17 @@ import com.shupro.oa.utils.MyBeanUtil;
 import com.shupro.oa.utils.excel.ExcelInfo;
 import com.shupro.oa.utils.excel.ExcelUtil;
 import com.shupro.oa.utils.excel.POIUtil;
+import com.shupro.oa.utils.json.JsonUtil;
 import com.shupro.oa.utils.lang.StringUtil;
 
 public class MyTest {
+	@Test
+	public void test5() throws IOException{
+		String str = "{\"msg\":\"add Site success!\",\"status\":\"true\"}";
+		Map<String, Object> map = JsonUtil.jsonStr2Map(str);
+		System.out.println(map);
+	}
+	
 	@Test
 	public void test3() throws IOException{
 		Student stu = new Student("name1", "grade1", "70", "70");
@@ -39,8 +47,8 @@ public class MyTest {
 		map1.put("machineScore", 60);
 		list.add(map1);
 		
-		ExcelInfo excelInfo = new ExcelInfo("成绩表",titles,fields,list);
-		ExcelUtil.writeXls03(excelInfo).write(outStream);
+		ExcelInfo excelInfo = new ExcelInfo("","成绩表",titles,fields,list);
+		ExcelUtil.writeXls03(excelInfo, outStream);
 		outStream.close();
 	}
 	

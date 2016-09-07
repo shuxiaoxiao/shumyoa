@@ -7,10 +7,11 @@
 		<result column="name" property="name"/>
 		<result column="value" property="value"/>
 		<result column="descs" property="descs"/>
+		<result column="sotid" property="sotid"/>
 	</resultMap>
        
 	<sql id="Base_Column_List" >
-		 id,pid,name,value,descs
+		 id,pid,name,value,descs,sotid
 	</sql>
    
 	<!-- 动态查询条件 -->
@@ -49,13 +50,13 @@
    
 	<!-- 插入记录 -->
 	<insert id="insert" parameterType="com.shupro.oa.admin.model.SysDictionary" >
-	  insert into sys_dictionary(id,pid,name,value,descs)
- values(#{id},#{pid},#{name},#{value},#{descs})
+	  insert into sys_dictionary(id,pid,name,value,descs,sotid)
+ values(#{id},#{pid},#{name},#{value},#{descs},#{sotid})
 	</insert>
 
 	<!-- 根据id，修改记录-->  
 	 <update id="update" parameterType="com.shupro.oa.admin.model.SysDictionary" >
-	  update sys_dictionary set pid=#{pid},name=#{name},value=#{value},descs=#{descs}
+	  update sys_dictionary set pid=#{pid},name=#{name},value=#{value},descs=#{descs},sotid=#{sotid}
 	  where id=#{id}
 	 </update>
  
@@ -75,13 +76,16 @@
 	<if test="descs != null  and descs != '' ">
 		descs=#{descs},
 	</if>
+	<if test="sotid != null  and sotid != '' ">
+		sotid=#{sotid},
+	</if>
 	</trim> 
 	where id=#{id}
 	</update>
 
 	<!-- 删除记录 -->
 	<delete id="deleteById" parameterType="com.shupro.oa.admin.model.SysDictionary" >
-		delete 	 from sys_dictionary where id = #{id}
+		delete from sys_dictionary where id = #{id}
 	</delete>
   	
 </mapper>

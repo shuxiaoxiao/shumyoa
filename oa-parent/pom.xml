@@ -36,6 +36,7 @@
 		<jxl.version>2.6.12</jxl.version>
 		<redisson.version>2.2.13</redisson.version>
 		<freemarker.version>2.3.23</freemarker.version>
+		<httpclient.version>4.5.2</httpclient.version>
 		<junit.version>4.11</junit.version>
 	</properties>
 	<!-- dependencyManagement表示子模块能继承的依赖配置，需要使用那些自己手动配置 -->
@@ -57,6 +58,11 @@
 				<version>${oa.version}</version>
 			</dependency>
 			
+			<dependency>
+	            <groupId>org.apache.httpcomponents</groupId>
+	            <artifactId>httpclient</artifactId>
+	            <version>${httpclient.version}</version>
+	        </dependency>
 			<dependency>
 			    <groupId>org.freemarker</groupId>
 			    <artifactId>freemarker</artifactId>
@@ -408,6 +414,31 @@
 		</dependencies>
 	</dependencyManagement>
 	
+	<!-- 配置文件 -->
+	<profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <id>development</id>
+            <properties>
+                <package.environment>development</package.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <package.environment>test</package.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <package.environment>product</package.environment>
+            </properties>
+        </profile>
+    </profiles>
+    
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -456,6 +487,11 @@
 			<resource>
 				<directory>src/main/resources</directory>
 			</resource>
+			<!-- profile配置对应的配置文件路径 
+			<resource>
+                <directory>src/environment/${package.environment}</directory>
+            </resource>
+            -->
 		</resources>
 	</build>
 	
