@@ -6,6 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * 数据库连接工具
+ * @author shu
+ *
+ */
 public class JdbcUtil {
 
 	private JdbcUtil() {

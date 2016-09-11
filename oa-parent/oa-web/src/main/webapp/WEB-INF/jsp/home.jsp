@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/commons/global.jsp" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
   	<%@ include file="/commons/basejs.jsp" %>  
@@ -15,7 +14,23 @@
     <div class="easyui-layout" style="width:100%;height:100%;">
 		<div data-options="region:'north'" style="height:50px">
 			logo
-			<p><a href="javascript:void(0);" class="easyui-linkbutton" onclick="logout()" icon="icon-clear" >安全退出</a></p>
+			<div class="text-right">
+				<a href="javascript:void(0);" class="easyui-menubutton" data-options="iconCls:'icon-ok',menu:'#menu-theme' " >更换皮肤</a>
+				<a href="javascript:void(0);" class="easyui-linkbutton" onclick="logout()" data-options="iconCls:'icon-clear' " >安全退出</a>
+			</div>
+			<div id="menu-theme" style="width:120px; display: none;">
+				<div onclick="changeTheme('black')">黑色</div>
+				<div onclick="changeTheme('bootstrap')">bootstrap</div>
+				<div onclick="changeTheme('default')">淡蓝色</div>
+				<div onclick="changeTheme('gray')">灰色</div>
+				<div onclick="changeTheme('material')">原料灰</div>
+				<div onclick="changeTheme('metro')">地下灰</div>
+				<div onclick="changeTheme('cupertino')">灰色(库比蒂诺)</div>
+				<div onclick="changeTheme('dark-hive')">亮黑色</div>
+				<div onclick="changeTheme('pepper-grinder')">胡椒色</div>
+				<div onclick="changeTheme('sunny')">阳光色</div>
+			</div>
+			
 		</div>
 		<div data-options="region:'south'" style="height:30px;">
 			copyright
@@ -201,6 +216,32 @@
 				
 			});
 		}
+		
+		//换肤
+		//changeTheme = function(themeName) {
+		 function changeTheme(themeName) {
+			//获得<link id="easyuiTheme" ，，， />并对其进行修改
+			var $easyuiTheme = $('#easyuiTheme');
+			var url = $easyuiTheme.attr('href');
+			var href = url.substring(0, url.indexOf('themes')) + 'themes/' + themeName + '/easyui.css';
+			$easyuiTheme.attr('href', href);
+		
+			//通过tabs引入目标页面的方式是：content:iframe，需要添加该部分
+			var $iframe = $('iframe');
+			if ($iframe.length > 0) {
+				for ( var i = 0; i < $iframe.length; i++) {
+					var ifr = $iframe[i];
+					//外层页调用里层页的变量
+					$(ifr).contents().find('#easyuiTheme').attr('href', href);
+				}
+			}
+			
+			//easyuiThemeName 保存7天
+			$.cookie('easyuiThemeName', themeName, {
+				expires : 7
+			});
+		};
+		
 		
 	</script>
   </body>

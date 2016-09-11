@@ -7,8 +7,11 @@
 <script type="text/javascript" src="${staticPath }/resource/My97DatePicker/WdatePicker.js" charset="utf-8"></script>
 <!-- [jQuery] -->
 <script type="text/javascript" src="${staticPath }/resource/easyui/jquery.min.js" charset="utf-8"></script>
+<!-- [jQuery cookie] -->
+<script type="text/javascript" src="${staticPath }/js/jquery.cookie.js" charset="utf-8"></script>
 <!-- [EasyUI] -->
-<link id="easyuiTheme" rel="stylesheet" type="text/css" href="${staticPath }/resource/easyui/themes/default/easyui.css" />
+<link id="easyuiTheme" rel="stylesheet" type="text/css" href="${staticPath }/resource/easyui/themes/<c:out value="${cookie.easyuiThemeName.value}" default="default"/>/easyui.css" />
+<%-- <link id="easyuiTheme" rel="stylesheet" type="text/css" href="${staticPath }/resource/easyui/themes/default/easyui.css" /> --%>
 <link id="easyuiTheme" rel="stylesheet" type="text/css" href="${staticPath }/resource/easyui/themes/icon.css" />
 <script type="text/javascript" src="${staticPath }/resource/easyui/jquery.easyui.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="${staticPath }/resource/easyui/easyui-lang-zh_CN.js" charset="utf-8"></script>

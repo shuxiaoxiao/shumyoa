@@ -8,8 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.shupro.oa.admin.model.SysUser;
 
+/**
+ * 拦截器
+ * @author shu
+ *
+ */
 public class SecurityInterceptor implements HandlerInterceptor {
 
+	//1
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -24,18 +30,16 @@ public class SecurityInterceptor implements HandlerInterceptor {
 		return true;
 	}
 
+	//2
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		// TODO Auto-generated method stub
-		
 	}
 
+	//3
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		// TODO Auto-generated method stub
-		
 	}  
 
 }
