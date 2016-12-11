@@ -90,12 +90,18 @@
 		<include refid="Example_Where_Clause"/>
 	</select>
 	
+	<!-- 检查用户名  -->
+	<select id="checkUser"  resultMap="BaseResultMap" parameterType="java.lang.String">
+		select <include refid="Base_Column_List" /> 
+	 	from sys_user where loginname = #{loginname}
+	</select>
+	
 	<!-- 登录  -->
 	<select id="login"  resultMap="BaseResultMap" >
 		select <include refid="Base_Column_List" /> 
 	 from sys_user where loginname = #{0} and pwd = #{1}
 	</select>
-<!-- 	<select id="login"  resultMap="BaseResultMap" >
+<!-- 	<select id="login"  resultMap="BaseResultMap" parameterType="com.shupro.oa.admin.model.SysUser">
 		select <include refid="Base_Column_List" /> 
 	 from sys_user where loginname = #{loginname} and pwd = #{password}
 	</select> -->

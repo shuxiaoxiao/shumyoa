@@ -48,6 +48,24 @@
 	</trim>
 	</sql>
  
+	<!-- 根据角色id 查询所含菜单  -->
+	<select id="selectByRoleId"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select  m.id,m.name,m.pid,m.levels,m.createtime,m.requesturl,m.menutype,m.sotid
+	from sys_menu m
+	left join sys_role_menu rm on rm.menuid = m.id
+	where rm.roleid = #{roleId}
+	</select>
+ 
+	<!-- 根据登录名 查询所含菜单  -->
+	<select id="selectByLoginName"  resultMap="BaseResultMap" parameterType="java.lang.String">
+	select  m.id,m.name,m.pid,m.levels,m.createtime,m.requesturl,m.menutype,m.sotid
+	from sys_menu m
+	left join sys_role_menu rm on rm.menuid = m.id
+	left join sys_user_role ur on ur.roleid = rm.roleid
+	left join sys_user u on u.id = ur.userid
+	where u.loginname = #{loginName}
+	</select>
+ 
 	<!-- 根据id查询  -->
 	<select id="selectById"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select <include refid="Base_Column_List" /> 

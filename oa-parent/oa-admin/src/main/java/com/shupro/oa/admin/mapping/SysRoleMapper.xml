@@ -32,6 +32,14 @@
 	</trim>
 	</sql>
  
+ 	<!-- 根据用户id 查询所含 角色 -->
+	<select id="selectByUserId"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select r.id,r.name,r.type
+	from sys_role r
+	left join sys_user_role ur on ur.roleid =  r.id
+	where ur.userid = #{userId}
+	</select>
+ 
 	<!-- 根据id查询  -->
 	<select id="selectById"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select <include refid="Base_Column_List" /> 
